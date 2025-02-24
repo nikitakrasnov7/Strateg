@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GenerationMap : MonoBehaviour
 {
@@ -11,18 +14,33 @@ public class GenerationMap : MonoBehaviour
 
     public Transform parent;
     public GameSettingsSO gameSettings;
+    public SaveEnemyDataSO saveEnemyDataSO;
 
     private int _terrainSize;
 
     private Vector3 _center;
     private Vector3[] corners = new Vector3[4];
 
+    public Terrain Terrain;
+
+    
+    private List<Vector3> _listVector = new List<Vector3>();
+
+    [Header("Point for Spawn")]
+    public  List<GameObject> _listPointer = new List<GameObject>();
+    public GameObject PointPlayer;
+  
+
+    [Header("Prefab player and enemy")]
+    public GameObject PrefabPlayer;
+    public GameObject PrefabEnemy;
+    
 
     private void OnEnable()
     {
         _terrainSize = gameSettings.MapSize * 2;
 
-        _center = new Vector3(_terrainSize / 2,0, _terrainSize / 2);
+        _center = new Vector3(_terrainSize / 2, 0, _terrainSize / 2);
 
         corners = new[]
         {
@@ -32,18 +50,59 @@ public class GenerationMap : MonoBehaviour
             new Vector3(_terrainSize,0,_terrainSize)
         };
 
+
+
+        GenerationEnemy();
         GenerationResouces();
 
     }
+
+    void GenerationEnemy()
+    {
+        Terrain.terrainData.size = new Vector3(_terrainSize, _terrainSize, _terrainSize);
+
+        PointPlayer.transform.position = new Vector3(_terrainSize / 10, 0, _terrainSize / 10);
+
+        _listVector.Add(new Vector3(_terrainSize / 6, 0, _terrainSize / 2));
+        _listVector.Add(new Vector3(_terrainSize / 6, 0, _terrainSize * 5 / 6));
+
+        _listVector.Add(new Vector3(_terrainSize / 2, 0, _terrainSize / 2));
+        _listVector.Add(new Vector3(_terrainSize / 2, 0, _terrainSize * 5 / 6));
+
+        _listVector.Add(new Vector3((_terrainSize / 6) * 5, 0, _terrainSize / 2));
+        _listVector.Add(new Vector3((_terrainSize / 6) * 5, 0, _terrainSize * 5 / 6));
+
+        Instantiate(PrefabPlayer, PointPlayer.transform.position, Quaternion.identity);
+        CreateEnemy();
+
+        
+    }
+   
+
+    public void CreateEnemy()
+    {
+        for (int i = 0; i < saveEnemyDataSO._enemyList.Count; i++)
+        {
+            _listPointer[i].transform.position = _listVector[i];
+            GameObject enemy = Instantiate(PrefabEnemy, _listPointer[i].transform);
+            enemy.GetComponentInChildren<TextMeshProUGUI>().text = saveEnemyDataSO._enemyList[i];
+            enemy.GetComponentInChildren<Image>().color = saveEnemyDataSO._enemyColorList[i];
+        }
+    }
     void GenerationResouces()
     {
+
         for (int x = 0; x < _terrainSize; x++)
         {
             for (int y = 0; y < _terrainSize; y++)
             {
-                float xCoord = (float)x / _terrainSize * 40;
-                float yCoord = (float)y / _terrainSize * 40;
+                int constantSize = _terrainSize / 3;
+
+                float xCoord = (float)x / _terrainSize * constantSize;
+                float yCoord = (float)y / _terrainSize * constantSize;
                 float sample = Mathf.PerlinNoise(xCoord, yCoord);
+
+
 
                 if (sample > 0.8f)
                 {
@@ -55,3 +114,4 @@ public class GenerationMap : MonoBehaviour
         }
     }
 }
+

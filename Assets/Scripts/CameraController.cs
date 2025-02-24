@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 public class CameraController : MonoBehaviour
 {
@@ -46,19 +47,19 @@ public class CameraController : MonoBehaviour
                     Vector3 test;
                     if (dir > -_minSwipeAngel && dir <= _minSwipeAngel)
                     {
-                        test = Vector3.left;
+                        test = Vector3.forward;
                     }
                     else if (dir > _minSwipeAngel && dir <= 180 - _minSwipeAngel)
                     {
-                        test = Vector3.back;
+                        test = Vector3.left;
                     }
                     else if (dir > -180 + _minSwipeAngel && dir <= -_minSwipeDistation)
                     {
-                        test = Vector3.forward;
+                        test = Vector3.right;
                     }
                     else
                     {
-                        test = Vector3.right;
+                        test = Vector3.back;
                     }
 
                     Rigidbody.AddForce(test * _maxSpeed, ForceMode.Impulse);

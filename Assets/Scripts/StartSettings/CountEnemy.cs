@@ -12,35 +12,63 @@ public class CountEnemy : MonoBehaviour
     public Transform ParentNewEnemy;
     public GameObject EnemyPrefab;
 
+    public GameSettingsSO GameSettingsSO;
+    public SaveEnemyDataSO SaveEnemyDataSO;
+   
+
+    public List<GameObject> ListEnemy = new List<GameObject>();
 
     private void Start()
     {
         EnemyDropDown.onValueChanged.AddListener(OnEnemyCountChahged);
+        SaveEnemyDataSO._enemyList.Clear();
+        SaveEnemyDataSO._enemyColorList.Clear();
+    }
+
+    public void CreateEnemyData()
+    {
+        GameObject[] enemyTag = GameObject.FindGameObjectsWithTag("EnemyUI");
+        foreach (GameObject enemy in enemyTag) 
+        {
+            var name = enemy.GetComponentInChildren<TMP_InputField>().text;
+            var color = enemy.transform.Find("ImageButton").GetComponent<Image>().color;
+
+            SaveEnemyDataSO._enemyList.Add(name);
+            SaveEnemyDataSO._enemyColorList.Add(color);
+        }
+        Debug.Log(SaveEnemyDataSO._enemyList.Count);
     }
 
     private void OnEnemyCountChahged(int index)
     {
-       
-
-
 
         foreach (Transform child in ParentNewEnemy)
         {
-            if(child.name != "CountEnemy" && child.name != "Level" && child.name != "SizeMap")
+            ListEnemy.Clear();
+            if (child.tag == "EnemyUI")
             {
-             Destroy(child.gameObject); 
+                Destroy(child.gameObject);
 
             }
         }
         int enemyCount = EnemyDropDown.value;
-        for (int i = 0; i <= enemyCount; i++) 
+        for (int i = 0; i <= enemyCount; i++)
         {
             int j = 2;
+
             GameObject enemy = Instantiate(EnemyPrefab, ParentNewEnemy);
             enemy.transform.SetSiblingIndex(j);
+            enemy.CompareTag("EnemyUI");
+
+
+            ListEnemy.Add(enemy);
+
             j++;
 
+
+
         }
+        Debug.Log(ListEnemy.Count);
 
     }
 }

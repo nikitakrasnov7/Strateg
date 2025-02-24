@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcb7166ce6417114d847f9c90f0978b2, type: 3}
   m_Name: New Game Settings
   m_EditorClassIdentifier: 
-  _enemiesCount: 0
+  _enemiesCount: 1
   _playerList: []
-  _mapSize: 50
+  _mapSize: 300

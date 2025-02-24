@@ -10,6 +10,7 @@ public class GameSettingsSO : ScriptableObject
     [SerializeField] private int _enemiesCount;
     [SerializeField] private List<PlayerItemStack> _playerList;
     [SerializeField] private int _mapSize;
+    
 
     public int EnemiesCount => _enemiesCount;
     public List<PlayerItemStack> Player => _playerList;
@@ -33,4 +34,6 @@ public class GameSettingsSO : ScriptableObject
         if(count <=0) return;
         _playerList.Add(new PlayerItemStack(item));
     }
+
+
 }
