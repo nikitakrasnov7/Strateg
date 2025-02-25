@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Unit
   - EnemyUI
+  - Tree
+  - Rock
   layers:
   - Default
   - TransparentFX

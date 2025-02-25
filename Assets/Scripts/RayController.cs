@@ -21,6 +21,8 @@ public class RayController : MonoBehaviour
 
                 if (Physics.Raycast(ray, out hit))
                 {
+
+                    Debug.Log(hit.transform.name);
                     if (hit.collider.tag == "Unit")
                     {
                         unitController = hit.collider.GetComponent<UnitController>();
@@ -28,6 +30,7 @@ public class RayController : MonoBehaviour
                         UiActive(unit);
                         Debug.Log(unit);
                         DownInventoryManager.Instance.ActiveTrue();
+
                     }
                     else
                     {
@@ -43,11 +46,11 @@ public class RayController : MonoBehaviour
 
     public void UiActive(Unit unit)
     {
-        if (unit == Unit.Villager) 
+        if (unit == Unit.Villager)
         {
-            UIController.Instance.UiActive(true, false,false,false,true,false);
+            UIController.Instance.UiActive(true, false, false, false, true, false);
         }
-        else if(unit == Unit.Healer)
+        else if (unit == Unit.Healer)
         {
             UIController.Instance.UiActive(false, false, true, false, false, false);
         }
@@ -55,7 +58,7 @@ public class RayController : MonoBehaviour
         {
             UIController.Instance.UiActive(false, true, false, false, false, false);
         }
-        else if(unit == Unit.Zombie)
+        else if (unit == Unit.Zombie)
         {
             UIController.Instance.UiActive(false, false, false, true, false, true);
         }

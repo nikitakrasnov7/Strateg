@@ -1,11 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering;
 using UnityEngine.SocialPlatforms;
 
 public class CameraController : MonoBehaviour
 {
+    public Transform RightDownPoint;
+    public Transform LeftUpPoint;
     // TRANSFORM
     private float _minSwipeDistation = 35f;
     private float _minSwipeAngel = 15f;
@@ -25,6 +29,7 @@ public class CameraController : MonoBehaviour
 
 
 
+
     void Update()
     {
         if (Input.touchCount == 1)
@@ -41,29 +46,32 @@ public class CameraController : MonoBehaviour
                 Vector3 endPos = touch.position;
                 Vector3 swipe = endPos - _startPosition;
 
-                if (true)
-                {
-                    float dir = Mathf.Atan2(swipe.y, swipe.x) * Mathf.Rad2Deg;
-                    Vector3 test;
-                    if (dir > -_minSwipeAngel && dir <= _minSwipeAngel)
-                    {
-                        test = Vector3.forward;
-                    }
-                    else if (dir > _minSwipeAngel && dir <= 180 - _minSwipeAngel)
-                    {
-                        test = Vector3.left;
-                    }
-                    else if (dir > -180 + _minSwipeAngel && dir <= -_minSwipeDistation)
-                    {
-                        test = Vector3.right;
-                    }
-                    else
-                    {
-                        test = Vector3.back;
-                    }
 
-                    Rigidbody.AddForce(test * _maxSpeed, ForceMode.Impulse);
+
+                float dir = Mathf.Atan2(swipe.y, swipe.x) * Mathf.Rad2Deg;
+                Vector3 test;
+                if (dir > -_minSwipeAngel && dir <= _minSwipeAngel)
+                {
+                    test = (gameObject.transform.position.z < LeftUpPoint.position.z)? Vector3.forward : Vector3.zero;
+                    //{ test = Vector3.forward; }
+                    //else { test = Vector3.zero; }
                 }
+                else if (dir > _minSwipeAngel && dir <= 180 - _minSwipeAngel)
+                {
+                    test = (gameObject.transform.position.x > RightDownPoint.position.x)? Vector3.left : Vector3.zero;
+                }
+                else if (dir > -180 + _minSwipeAngel && dir <= -_minSwipeDistation)
+                {
+                    test = (gameObject.transform.position.x < LeftUpPoint.position.x)? Vector3.right : Vector3.zero;
+                }
+                else
+                {
+                    test = (gameObject.transform.position.z > RightDownPoint.position.z)? Vector3.back : Vector3.zero;
+                }
+                
+
+                Rigidbody.AddForce(test * _maxSpeed, ForceMode.Impulse);
+
             }
 
 
@@ -71,11 +79,11 @@ public class CameraController : MonoBehaviour
 
         }
 
-        else if(Input.touchCount == 2)
+        else if (Input.touchCount == 2)
         {
             Touch touch0 = Input.GetTouch(0);
             Touch touch1 = Input.GetTouch(1);
-            
+
             Vector3 touchZero = touch0.position - touch0.deltaPosition;
             Vector3 touchOne = touch1.position - touch1.deltaPosition;
 

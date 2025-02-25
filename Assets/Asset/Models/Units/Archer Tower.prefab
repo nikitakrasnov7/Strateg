@@ -212,6 +212,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7136307974824753408}
+  - component: {fileID: 4551903693856068570}
   m_Layer: 0
   m_Name: Archer Tower
   m_TagString: Untagged
@@ -239,6 +240,29 @@ Transform:
   - {fileID: 1322196797275015500}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &4551903693856068570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5056541987184030655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c577ef72aa7f5a4479db67f10b5f43e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unit: 0
+  Name: 
+  hp: 0
+  speed: 0
+  resource: 
+  zonaActive: 0
+  MinDistationForAttack: 0
+  MaxDistationForAttack: 0
+  TimeDelayTower: 0
+  Damage: 0
+  CountUnit: 0
 --- !u!1 &5385215604123290628
 GameObject:
   m_ObjectHideFlags: 0
