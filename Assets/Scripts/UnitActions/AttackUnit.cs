@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class AttackUnit : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void Attack(GameObject unit, Vector3 position)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        unit.transform.position = position;
     }
 }

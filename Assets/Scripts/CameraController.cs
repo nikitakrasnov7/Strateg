@@ -1,10 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
+
 using UnityEngine;
-using UnityEngine.Experimental.Rendering;
-using UnityEngine.SocialPlatforms;
 
 public class CameraController : MonoBehaviour
 {

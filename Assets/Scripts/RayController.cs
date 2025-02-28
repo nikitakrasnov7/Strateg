@@ -5,6 +5,7 @@ using UnityEngine;
 public class RayController : MonoBehaviour
 {
     private UnitController unitController;
+    public UnitActionsControllerSO UnitActionsControllerSO;
     private Unit unit;
 
     // Update is called once per frame
@@ -27,15 +28,19 @@ public class RayController : MonoBehaviour
                     {
                         unitController = hit.collider.GetComponent<UnitController>();
                         unit = unitController.unit;
+
+                        UnitActionsControllerSO.Unit = hit.collider.gameObject;
+                        Debug.Log(UnitActionsControllerSO.Unit.name);
+
                         UiActive(unit);
-                        Debug.Log(unit);
+                        
                         DownInventoryManager.Instance.ActiveTrue();
 
                     }
                     else
                     {
                         unitController = null;
-                        DownInventoryManager.Instance.ActiveFalse();
+                        //DownInventoryManager.Instance.ActiveFalse();
                     }
                 }
 
