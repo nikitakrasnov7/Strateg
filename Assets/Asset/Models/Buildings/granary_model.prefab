@@ -1725,6 +1725,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3928290521851066025}
+  - component: {fileID: 3048525244561323972}
   m_Layer: 10
   m_Name: granary_model
   m_TagString: Untagged
@@ -1770,6 +1771,27 @@ Transform:
   - {fileID: 2378378316036828444}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!65 &3048525244561323972
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3931184038110116919}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.39, y: 4.66, z: 2.96}
+  m_Center: {x: 0, y: 2.03, z: 0}
 --- !u!1 &4315044987307610154
 GameObject:
   m_ObjectHideFlags: 0

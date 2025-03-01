@@ -21,5 +21,6 @@ public enum Building
     Beds,
     Mill,
     TownHall,
-    Smelters
+    Smelters,
+    Tower
 }

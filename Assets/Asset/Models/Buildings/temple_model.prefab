@@ -97,6 +97,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3928290521851066025}
+  - component: {fileID: 6450288894501517978}
   m_Layer: 10
   m_Name: temple_model
   m_TagString: Untagged
@@ -122,6 +123,27 @@ Transform:
   - {fileID: 6259247003235196838}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!65 &6450288894501517978
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3931184038110116919}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.1600003, y: 3.2977047, z: 2.4132707}
+  m_Center: {x: -0, y: 1.4271727, z: -0.13836527}
 --- !u!1 &6261128975377943957
 GameObject:
   m_ObjectHideFlags: 0

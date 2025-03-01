@@ -578,37 +578,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: siege_factory_model
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1053811401121512264, guid: 46453a7b22d0be54f943ea54a01dcab3, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1131050632274006739, guid: 46453a7b22d0be54f943ea54a01dcab3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 919517132492032350}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46453a7b22d0be54f943ea54a01dcab3, type: 3}
 --- !u!4 &6029058423650234700 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 678430460160886476, guid: 46453a7b22d0be54f943ea54a01dcab3, type: 3}
   m_PrefabInstance: {fileID: 6539719625910679424}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &6157419972313359699 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1131050632274006739, guid: 46453a7b22d0be54f943ea54a01dcab3, type: 3}
-  m_PrefabInstance: {fileID: 6539719625910679424}
-  m_PrefabAsset: {fileID: 0}
---- !u!208 &919517132492032350
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6157419972313359699}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 29.08, y: 19.7, z: 18.35}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 16.23, z: 0}
-  m_TimeToStationary: 0.5

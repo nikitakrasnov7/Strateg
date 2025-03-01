@@ -24,74 +24,82 @@ public class CameraController : MonoBehaviour
 
 
 
-
+    private void Start()
+    {
+        UnitActionsControllerSO.Instance.IsMove = true;
+    }
     void Update()
     {
-        if (Input.touchCount == 1)
+        if (UnitActionsControllerSO.Instance.IsMove)
         {
-            Touch touch = Input.GetTouch(0);
-
-            if (touch.phase == TouchPhase.Began)
+            if (Input.touchCount == 1)
             {
-                _startPosition = touch.position;
-                _currentVelocity = Rigidbody.velocity;
+                Touch touch = Input.GetTouch(0);
+
+                if (touch.phase == TouchPhase.Began)
+                {
+                    _startPosition = touch.position;
+                    _currentVelocity = Rigidbody.velocity;
+                }
+                else if (touch.phase == TouchPhase.Moved)
+                {
+                    Vector3 endPos = touch.position;
+                    Vector3 swipe = endPos - _startPosition;
+
+
+
+                    float dir = Mathf.Atan2(swipe.y, swipe.x) * Mathf.Rad2Deg;
+                    Vector3 test;
+                    if (dir > -_minSwipeAngel && dir <= _minSwipeAngel)
+                    {
+                        test = (gameObject.transform.position.z < LeftUpPoint.position.z) ? Vector3.forward : Vector3.zero;
+                        //{ test = Vector3.forward; }
+                        //else { test = Vector3.zero; }
+                    }
+                    else if (dir > _minSwipeAngel && dir <= 180 - _minSwipeAngel)
+                    {
+                        test = (gameObject.transform.position.x > RightDownPoint.position.x) ? Vector3.left : Vector3.zero;
+                    }
+                    else if (dir > -180 + _minSwipeAngel && dir <= -_minSwipeDistation)
+                    {
+                        test = (gameObject.transform.position.x < LeftUpPoint.position.x) ? Vector3.right : Vector3.zero;
+                    }
+                    else
+                    {
+                        test = (gameObject.transform.position.z > RightDownPoint.position.z) ? Vector3.back : Vector3.zero;
+                    }
+
+
+                    Rigidbody.AddForce(test * _maxSpeed, ForceMode.Impulse);
+
+                }
+
+
+
+
             }
-            else if (touch.phase == TouchPhase.Moved)
+
+            else if (Input.touchCount == 2)
             {
-                Vector3 endPos = touch.position;
-                Vector3 swipe = endPos - _startPosition;
+                Touch touch0 = Input.GetTouch(0);
+                Touch touch1 = Input.GetTouch(1);
 
+                Vector3 touchZero = touch0.position - touch0.deltaPosition;
+                Vector3 touchOne = touch1.position - touch1.deltaPosition;
 
+                float magn = (touchZero - touchOne).magnitude;
+                float current = (touch0.position - touch1.position).magnitude;
 
-                float dir = Mathf.Atan2(swipe.y, swipe.x) * Mathf.Rad2Deg;
-                Vector3 test;
-                if (dir > -_minSwipeAngel && dir <= _minSwipeAngel)
-                {
-                    test = (gameObject.transform.position.z < LeftUpPoint.position.z)? Vector3.forward : Vector3.zero;
-                    //{ test = Vector3.forward; }
-                    //else { test = Vector3.zero; }
-                }
-                else if (dir > _minSwipeAngel && dir <= 180 - _minSwipeAngel)
-                {
-                    test = (gameObject.transform.position.x > RightDownPoint.position.x)? Vector3.left : Vector3.zero;
-                }
-                else if (dir > -180 + _minSwipeAngel && dir <= -_minSwipeDistation)
-                {
-                    test = (gameObject.transform.position.x < LeftUpPoint.position.x)? Vector3.right : Vector3.zero;
-                }
-                else
-                {
-                    test = (gameObject.transform.position.z > RightDownPoint.position.z)? Vector3.back : Vector3.zero;
-                }
-                
+                float diff = magn - current;
 
-                Rigidbody.AddForce(test * _maxSpeed, ForceMode.Impulse);
-
+                Camera.fieldOfView += diff * _zoomSpeed;
+                Camera.fieldOfView = Mathf.Clamp(Camera.fieldOfView, _minZoom, _maxZoom);
             }
 
-
-
-
-        }
-
-        else if (Input.touchCount == 2)
-        {
-            Touch touch0 = Input.GetTouch(0);
-            Touch touch1 = Input.GetTouch(1);
-
-            Vector3 touchZero = touch0.position - touch0.deltaPosition;
-            Vector3 touchOne = touch1.position - touch1.deltaPosition;
-
-            float magn = (touchZero - touchOne).magnitude;
-            float current = (touch0.position - touch1.position).magnitude;
-
-            float diff = magn - current;
-
-            Camera.fieldOfView += diff * _zoomSpeed;
-            Camera.fieldOfView = Mathf.Clamp(Camera.fieldOfView, _minZoom, _maxZoom);
         }
         _currentVelocity = Rigidbody.velocity;
         _currentVelocity *= 1f - _distation * Time.deltaTime;
         Rigidbody.velocity = _currentVelocity;
     }
 }
+

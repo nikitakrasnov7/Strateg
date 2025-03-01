@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class UIController : MonoBehaviour
 {
@@ -11,6 +12,20 @@ public class UIController : MonoBehaviour
 
     public GameObject Build;
     public GameObject Workout;
+
+    private void OnBuildingButtonClicked()
+    {
+        var buttonBuild = EventSystem.current.currentSelectedGameObject.GetComponent<UIButtonBuild>();
+        if (buttonBuild != null)
+        {
+            buttonBuild.OnButtonClicked += SetGameObject;
+        }
+    }
+
+    private void SetGameObject(GameObject go)
+    {
+        Debug.Log(go.name);
+    }
 
 
 

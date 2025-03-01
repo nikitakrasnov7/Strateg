@@ -12,23 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6a6bcfd297d0d1498c90e4088a97d74, type: 3}
   m_Name: Enemy Data
   m_EditorClassIdentifier: 
-  _enemy1Name: 2
-  _enemy2Name: 3
-  _enemy3Name: 4
-  _enemy4Name: 55
-  _enemy5Name: 6666
-  _enemy6Name: 
   _enemyList:
-  - 1
-  - 2
-  - 3
-  - 4
-  - 55
-  - 6666
-  _enemyColorList: []
-  _enemy1Color: {r: 0, g: 0, b: 0, a: 0}
-  _enemy2Color: {r: 0, g: 0, b: 0, a: 0}
-  _enemy3Color: {r: 0, g: 0, b: 0, a: 0}
-  _enemy4Color: {r: 0, g: 0, b: 0, a: 0}
-  _enemy5Color: {r: 0, g: 0, b: 0, a: 0}
-  _enemy6Color: {r: 0, g: 0, b: 0, a: 0}
+  - "\u041F\u0440\u043E\u0442\u0438\u0432\u043D\u0438\u043A 1"
+  _enemyColorList:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 0, g: 0, b: 1, a: 1}
+  - {r: 0, g: 1, b: 0, a: 1}
+  - {r: 1, g: 0, b: 0, a: 1}

@@ -1,18 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class RepairUnit : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public EventSystem eventSys;
+    public Image Build;
 
-    // Update is called once per frame
-    void Update()
+
+
+
+
+    public void ClickedRepairButton()
     {
-        
+        if (eventSys.currentSelectedGameObject.name == "Construct")
+        {
+            UnitActionsControllerSO.Instance.IsBuilding = true;
+            Build.gameObject.SetActive(true);
+        }
+        else
+        {
+            UnitActionsControllerSO.Instance.IsBuilding = false;
+            Build.gameObject.SetActive(false);
+        }
     }
+   
+
 }
