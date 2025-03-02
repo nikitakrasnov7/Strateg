@@ -54,7 +54,7 @@ public class RayController : MonoBehaviour
     {
         if (unit == Unit.Villager)
         {
-            UIController.Instance.UiActive(true, false, false, false, true, false);
+            UIController.Instance.UiActive(true, false, false, false, false, false);
         }
         else if (unit == Unit.Healer)
         {

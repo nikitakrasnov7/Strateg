@@ -17,15 +17,6 @@ public class ArmUnit : MonoBehaviour
     }
 
 
-    IEnumerator Move(Transform target, Vector3 dir)
-    {
-        while (Vector3.Distance(target.position, dir) > 0.1f)
-        {
-            target.position = Vector3.MoveTowards(target.position, dir, 10f * Time.fixedDeltaTime);
-            yield return null;
-        }
-        target.position = dir;
-    }
 
     // Update is called once per frame
     void Update()
