@@ -11,12 +11,16 @@ public class ColliderFunctions : MonoBehaviour
 
     //Image Create;
 
+    private void OnEnable()
+    {
+        canvas = gameObject.GetComponentInChildren<Image>();
+        
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
 
 
-        canvas = gameObject.GetComponentInChildren<Image>();
         UnitActionsControllerSO.Instance.CreateButtonController(false);
         canvas.color = red;
 

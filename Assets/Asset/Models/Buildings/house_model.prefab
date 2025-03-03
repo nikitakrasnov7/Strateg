@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 3928290521851066025}
   - component: {fileID: 1476631074759751355}
   - component: {fileID: 5338949924615713398}
+  - component: {fileID: 7969229415995839217}
   m_Layer: 10
   m_Name: house_model
   m_TagString: Build
@@ -172,6 +173,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &7969229415995839217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3931184038110116919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 042d4f541d451914da4b752b9701bb81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UnitCost: 1
+  FoodCost: 1
+  TreeCost: 1
+  IronCost: 1
+  RockCost: 1
 --- !u!1 &4966059860270376446
 GameObject:
   m_ObjectHideFlags: 0
@@ -184,7 +202,7 @@ GameObject:
   - component: {fileID: 5621456645609415458}
   - component: {fileID: 553924037881792152}
   - component: {fileID: 1387320321722410690}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,7 +387,7 @@ GameObject:
   - component: {fileID: 3715018871433700155}
   - component: {fileID: 7281791272796767730}
   - component: {fileID: 4572919741721255656}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}

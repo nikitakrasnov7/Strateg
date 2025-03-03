@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 8853640851821350094}
   - component: {fileID: 3093798814410624027}
   - component: {fileID: 3288137043439588340}
+  - component: {fileID: -5465817836477230598}
   m_Layer: 0
   m_Name: farm_model
   m_TagString: Untagged
@@ -205,6 +206,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &-5465817836477230598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705587607915861198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 042d4f541d451914da4b752b9701bb81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UnitCost: 1
+  FoodCost: 1
+  TreeCost: 2
+  IronCost: 2
+  RockCost: 2
 --- !u!1 &2065426160451974739
 GameObject:
   m_ObjectHideFlags: 0
@@ -1299,7 +1317,7 @@ GameObject:
   - component: {fileID: 4563791280284447209}
   - component: {fileID: 4758086855142605350}
   - component: {fileID: 1891747705280877147}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1375,7 +1393,7 @@ GameObject:
   - component: {fileID: 8185512718913604109}
   - component: {fileID: 7488507700591013478}
   - component: {fileID: 6371943371174531166}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1727,6 +1727,7 @@ GameObject:
   - component: {fileID: 3928290521851066025}
   - component: {fileID: 3048525244561323972}
   - component: {fileID: 3452745288339872107}
+  - component: {fileID: 1435976424006244712}
   m_Layer: 10
   m_Name: granary_model
   m_TagString: Untagged
@@ -1821,6 +1822,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &1435976424006244712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3931184038110116919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 042d4f541d451914da4b752b9701bb81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UnitCost: 2
+  FoodCost: 12
+  TreeCost: 20
+  IronCost: 10
+  RockCost: 10
 --- !u!1 &4315044987307610154
 GameObject:
   m_ObjectHideFlags: 0
@@ -1952,7 +1970,7 @@ GameObject:
   - component: {fileID: 4413037019947133345}
   - component: {fileID: 1033130819777872200}
   - component: {fileID: 8115890476191667511}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2702,7 +2720,7 @@ GameObject:
   - component: {fileID: 7525730213873985807}
   - component: {fileID: 6585657091445910957}
   - component: {fileID: 1345106388274687529}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

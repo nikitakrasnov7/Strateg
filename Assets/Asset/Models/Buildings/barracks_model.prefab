@@ -411,6 +411,7 @@ GameObject:
   - component: {fileID: 678430460160886476}
   - component: {fileID: 389970695513627756}
   - component: {fileID: 633857465280432356}
+  - component: {fileID: 725190812743226650}
   m_Layer: 0
   m_Name: barracks_model
   m_TagString: Untagged
@@ -499,6 +500,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &725190812743226650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131050632274006739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 042d4f541d451914da4b752b9701bb81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UnitCost: 5
+  FoodCost: 15
+  TreeCost: 30
+  IronCost: 30
+  RockCost: 40
 --- !u!1 &1200124859606866032
 GameObject:
   m_ObjectHideFlags: 0
@@ -2904,7 +2922,7 @@ GameObject:
   - component: {fileID: 2632957652475641414}
   - component: {fileID: 7549935239261283067}
   - component: {fileID: 4037666447954670516}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3572,7 +3590,7 @@ GameObject:
   - component: {fileID: 2228844479091117024}
   - component: {fileID: 8672235389491662943}
   - component: {fileID: 5380175395952244154}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

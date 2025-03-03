@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 685938477132657432}
   - component: {fileID: 1059790495355761763}
   - component: {fileID: 189792421830721292}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -254,7 +254,7 @@ GameObject:
   - component: {fileID: 7069352587727611578}
   - component: {fileID: 6314261585445832726}
   - component: {fileID: 1933003466802644607}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -438,6 +438,7 @@ GameObject:
   - component: {fileID: 234116858038731193}
   - component: {fileID: 745933941136974523}
   - component: {fileID: 8736152385990943758}
+  - component: {fileID: -3078108293746197933}
   m_Layer: 0
   m_Name: Storage Model
   m_TagString: Untagged
@@ -518,6 +519,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &-3078108293746197933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3934035896433079927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 042d4f541d451914da4b752b9701bb81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UnitCost: 2
+  FoodCost: 15
+  TreeCost: 15
+  IronCost: 5
+  RockCost: 10
 --- !u!1 &4128065949357169727
 GameObject:
   m_ObjectHideFlags: 0

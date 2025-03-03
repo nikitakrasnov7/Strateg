@@ -598,6 +598,7 @@ GameObject:
   - component: {fileID: 5281403237424375787}
   - component: {fileID: 967807498768112348}
   - component: {fileID: 1960374224395501665}
+  - component: {fileID: 3169611766739841402}
   m_Layer: 0
   m_Name: university_model
   m_TagString: Untagged
@@ -696,6 +697,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &3169611766739841402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143550019348336533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 042d4f541d451914da4b752b9701bb81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UnitCost: 5
+  FoodCost: 10
+  TreeCost: 20
+  IronCost: 20
+  RockCost: 20
 --- !u!1 &2221652293885669729
 GameObject:
   m_ObjectHideFlags: 0
@@ -1212,7 +1230,7 @@ GameObject:
   - component: {fileID: 5271137494084421528}
   - component: {fileID: 1655468399569350665}
   - component: {fileID: 8814253790450041866}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2051,7 +2069,7 @@ GameObject:
   - component: {fileID: 1919007395950117590}
   - component: {fileID: 3777850203193007788}
   - component: {fileID: 8663480422108676777}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
