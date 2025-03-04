@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 849ff84420ccbc64aa3db7a84eafbb09, type: 3}
   m_Name: Resources Count
   m_EditorClassIdentifier: 
-  _units: 99
-  _food: 99
-  _tree: 99
-  _iron: 99
-  _rock: 99
+  _units: 979
+  _food: 895
+  _tree: 792
+  _iron: 937
+  _rock: 817

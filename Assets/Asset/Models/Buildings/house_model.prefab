@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 1476631074759751355}
   - component: {fileID: 5338949924615713398}
   - component: {fileID: 7969229415995839217}
+  - component: {fileID: 4380392710458425281}
   m_Layer: 10
   m_Name: house_model
   m_TagString: Build
@@ -113,8 +114,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3.56, y: 3.56, z: 3.56}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5784926007057638614}
   - {fileID: 8322000542786874929}
@@ -190,6 +191,27 @@ MonoBehaviour:
   TreeCost: 1
   IronCost: 1
   RockCost: 1
+--- !u!95 &4380392710458425281
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3931184038110116919}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e8a8f30f8699ece40b0e637693bec335, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4966059860270376446
 GameObject:
   m_ObjectHideFlags: 0

@@ -599,6 +599,7 @@ GameObject:
   - component: {fileID: 967807498768112348}
   - component: {fileID: 1960374224395501665}
   - component: {fileID: 3169611766739841402}
+  - component: {fileID: 5949492497799887995}
   m_Layer: 0
   m_Name: university_model
   m_TagString: Untagged
@@ -616,8 +617,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 39.443703, y: 0.51, z: 113.6328}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 6.7, y: 6.7, z: 6.7}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7492398439015097826}
   - {fileID: 4062152418177519608}
@@ -714,6 +715,27 @@ MonoBehaviour:
   TreeCost: 20
   IronCost: 20
   RockCost: 20
+--- !u!95 &5949492497799887995
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2143550019348336533}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e04684b3fd5e1db41a66faf2159f3fd1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2221652293885669729
 GameObject:
   m_ObjectHideFlags: 0

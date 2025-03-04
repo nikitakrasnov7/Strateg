@@ -411,6 +411,7 @@ GameObject:
   - component: {fileID: 678430460160886476}
   - component: {fileID: 633857465280432356}
   - component: {fileID: 725190812743226650}
+  - component: {fileID: 913808566764030666}
   m_Layer: 0
   m_Name: barracks_model
   m_TagString: Untagged
@@ -495,6 +496,27 @@ MonoBehaviour:
   TreeCost: 30
   IronCost: 30
   RockCost: 40
+--- !u!95 &913808566764030666
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131050632274006739}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1a8775157abb43b4b87b7b47f7aa4187, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1200124859606866032
 GameObject:
   m_ObjectHideFlags: 0

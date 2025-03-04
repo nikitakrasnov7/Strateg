@@ -69,7 +69,7 @@ public class GenerationMap : MonoBehaviour
         PointPlayer.transform.position = new Vector3(_terrainSize / 10, 0, _terrainSize / 10);
 
         LeftUpPoint.transform.position = new Vector3(_terrainSize-50,0,_terrainSize-50);
-        RightDownPoint.transform.position = new Vector3(0, 0, 10);
+        RightDownPoint.transform.position = new Vector3(-10, 0, -10);
 
         _listVector.Add(new Vector3(_terrainSize / 6, 0, _terrainSize / 2));
         _listVector.Add(new Vector3(_terrainSize / 6, 0, _terrainSize * 5 / 6));
@@ -114,10 +114,10 @@ public class GenerationMap : MonoBehaviour
 
 
 
-                if (sample > 0.9f)
+                if (sample > 0.85f)
                 {
                     Vector3 position = new Vector3(x, 0, y);
-                    GameObject resourcePref = (sample > 0.95f) ? Rock : Tree;
+                    GameObject resourcePref = (sample > 0.9f) ? Rock : Tree;
                     Instantiate(resourcePref, position, Quaternion.identity, parent);
                 }
             }

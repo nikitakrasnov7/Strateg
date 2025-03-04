@@ -17,7 +17,7 @@ public class CreateBuildButton : MonoBehaviour
         CostResources costResources = build.GetComponent<CostResources>();
 
         animatorBuild = build.GetComponent<Animator>();
-
+        Debug.Log("createeee");
         unit = UnitActionsControllerSO.Instance.Unit.gameObject;
         animatorUnit = unit.GetComponent<Animator>();
 
@@ -27,6 +27,7 @@ public class CreateBuildButton : MonoBehaviour
             costResources.IronCost <= ResourceCount.Iron &&
             costResources.RockCost <= ResourceCount.Rock )
         {
+            Debug.Log("modmdsmdmdmddm");
             UnitActionsControllerSO.Instance.CreateBuild();
             UnitActionsControllerSO.Instance.ActiveCostResources(false);
 

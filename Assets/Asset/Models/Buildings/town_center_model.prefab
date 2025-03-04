@@ -1022,7 +1022,7 @@ GameObject:
   - component: {fileID: 3269132341058454090}
   - component: {fileID: 773138930233456256}
   m_Layer: 0
-  m_Name: wallDetailHorizontal (2)
+  m_Name: wallDetailHorizontal22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1358,7 +1358,7 @@ GameObject:
   - component: {fileID: 2688192042727528223}
   - component: {fileID: 192132108429206485}
   m_Layer: 0
-  m_Name: wallHalf
+  m_Name: wallHalf1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1442,7 +1442,7 @@ GameObject:
   - component: {fileID: 2510805111495076445}
   - component: {fileID: 6801303834922784107}
   m_Layer: 0
-  m_Name: wallDetailHorizontal (5)
+  m_Name: wallDetailHorizontal_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2111,7 +2111,7 @@ GameObject:
   - component: {fileID: 2160976973484877428}
   - component: {fileID: 4186555802800984766}
   m_Layer: 0
-  m_Name: wallDetailHorizontal
+  m_Name: wallDetailHorizontal1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2870,6 +2870,7 @@ GameObject:
   - component: {fileID: 6572200156024691690}
   - component: {fileID: 2761493764767337585}
   - component: {fileID: 4262575014950296437}
+  - component: {fileID: 4536730505079385650}
   m_Layer: 10
   m_Name: town_center_model
   m_TagString: Untagged
@@ -2887,8 +2888,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
   m_LocalPosition: {x: 0, y: 1.21, z: 0}
-  m_LocalScale: {x: 0.1153846, y: 0.1153846, z: 0.1153846}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.51, y: 0.51, z: 0.51}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4399015618492038953}
   - {fileID: 3745123062387547106}
@@ -3022,6 +3023,27 @@ MonoBehaviour:
   TreeCost: 40
   IronCost: 10
   RockCost: 40
+--- !u!95 &4536730505079385650
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3931184038110116919}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5e3e5fbe2a0738d43b5c51460cdb82dc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4046317012067538984
 GameObject:
   m_ObjectHideFlags: 0
@@ -3626,7 +3648,7 @@ GameObject:
   - component: {fileID: 9107717376879620410}
   - component: {fileID: 6449695604533560816}
   m_Layer: 0
-  m_Name: wall (3)
+  m_Name: wall_3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3880,7 +3902,7 @@ GameObject:
   - component: {fileID: 8744701135717059554}
   - component: {fileID: 6827347153041375016}
   m_Layer: 0
-  m_Name: wall (5)
+  m_Name: wall_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5387,7 +5409,7 @@ GameObject:
   - component: {fileID: 6811765549077953558}
   - component: {fileID: 8749570369647020252}
   m_Layer: 0
-  m_Name: wallDetailHorizontal (4)
+  m_Name: wallDetailHorizontal (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5892,7 +5914,7 @@ GameObject:
   - component: {fileID: 6316723080503117939}
   - component: {fileID: 8092253184119454905}
   m_Layer: 0
-  m_Name: wall (4)
+  m_Name: wall_4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5976,7 +5998,7 @@ GameObject:
   - component: {fileID: 5609714519346358287}
   - component: {fileID: 7655348521552141509}
   m_Layer: 0
-  m_Name: stairsWoodHandrail
+  m_Name: stairsWoodHandrail1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6418,7 +6440,7 @@ GameObject:
   - component: {fileID: 5074576109235869171}
   - component: {fileID: 7027994058066813241}
   m_Layer: 0
-  m_Name: fenceCurved
+  m_Name: fenceCurved1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6669,7 +6691,7 @@ GameObject:
   - component: {fileID: 4883097755943801709}
   - component: {fileID: 7214987331627476903}
   m_Layer: 0
-  m_Name: wallDetailHorizontal (1)
+  m_Name: wallDetailHorizontal11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
