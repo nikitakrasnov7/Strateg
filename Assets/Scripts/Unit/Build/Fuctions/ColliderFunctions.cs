@@ -20,18 +20,22 @@ public class ColliderFunctions : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
 
-
-        UnitActionsControllerSO.Instance.CreateButtonController(false);
-        canvas.color = red;
+        if (canvas != null)
+        {
+            UnitActionsControllerSO.Instance.CreateButtonController(false);
+            canvas.color = red;
+        }
 
 
     }
     private void OnCollisionExit(Collision collision)
     {
-        canvas.color = green;
-        UnitActionsControllerSO.Instance.CreateButtonController(true);
+        if (canvas != null)
+        {
+            canvas.color = green;
+            UnitActionsControllerSO.Instance.CreateButtonController(true);
 
-
+        }
     }
 
 

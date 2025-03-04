@@ -114,10 +114,10 @@ public class GenerationMap : MonoBehaviour
 
 
 
-                if (sample > 0.8f)
+                if (sample > 0.9f)
                 {
                     Vector3 position = new Vector3(x, 0, y);
-                    GameObject resourcePref = (sample > 0.85f) ? Rock : Tree;
+                    GameObject resourcePref = (sample > 0.95f) ? Rock : Tree;
                     Instantiate(resourcePref, position, Quaternion.identity, parent);
                 }
             }

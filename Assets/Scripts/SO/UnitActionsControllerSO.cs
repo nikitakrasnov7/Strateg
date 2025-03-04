@@ -91,7 +91,7 @@ public class UnitActionsControllerSO : MonoBehaviour
                 unit = null;
                 agent = null;
             }
-            Debug.Log(distance);
+            
         }
     }
 

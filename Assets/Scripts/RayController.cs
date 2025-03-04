@@ -24,7 +24,6 @@ public class RayController : MonoBehaviour
                 if (Physics.Raycast(ray, out hit))
                 {
 
-                    Debug.Log(hit.transform.name);
                     if (hit.collider.tag == "Unit")
                     {
                         unitController = hit.collider.GetComponent<UnitController>();

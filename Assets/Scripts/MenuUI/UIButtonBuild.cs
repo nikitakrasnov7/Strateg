@@ -81,7 +81,7 @@ public class UIButtonBuild : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
-                Debug.Log(hit.point);
+                
                 if (hit.collider.name == "Terrain")
                 {
                     var test = hit.point;

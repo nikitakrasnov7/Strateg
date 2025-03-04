@@ -258,19 +258,19 @@ Terrain:
   m_TreeMaximumFullLODCount: 50
   m_DetailObjectDistance: 80
   m_DetailObjectDensity: 1
-  m_HeightmapPixelError: 5
-  m_SplatMapDistance: 1000
+  m_HeightmapPixelError: 1
+  m_SplatMapDistance: 0
   m_HeightmapMinimumLODSimplification: 0
-  m_HeightmapMaximumLOD: 3
-  m_ShadowCastingMode: 2
+  m_HeightmapMaximumLOD: 0
+  m_ShadowCastingMode: 0
   m_DrawHeightmap: 1
   m_DrawInstanced: 0
-  m_DrawTreesAndFoliage: 1
+  m_DrawTreesAndFoliage: 0
   m_StaticShadowCaster: 0
   m_IgnoreQualitySettings: 0
-  m_ReflectionProbeUsage: 1
+  m_ReflectionProbeUsage: 0
   m_MaterialTemplate: {fileID: 8098232959037451966, guid: 6a8a13ac8694a1042b20cdea0a7d7920, type: 3}
-  m_BakeLightProbesForTrees: 1
+  m_BakeLightProbesForTrees: 0
   m_PreserveTreePrototypeLayers: 0
   m_DeringLightProbesForTrees: 1
   m_ReceiveGI: 1
@@ -433,6 +433,10 @@ PrefabInstance:
     - target: {fileID: 4412417125401228052, guid: 1a64972ad17ab9f4c8901e1a961e3a6f, type: 3}
       propertyPath: m_Name
       value: Rock
+      objectReference: {fileID: 0}
+    - target: {fileID: 4412417125401228052, guid: 1a64972ad17ab9f4c8901e1a961e3a6f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4412417125401259828, guid: 1a64972ad17ab9f4c8901e1a961e3a6f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1068,6 +1072,10 @@ PrefabInstance:
     - target: {fileID: 1382659402361695440, guid: c2c69f8104c371c4a9ff5d159de70649, type: 3}
       propertyPath: m_Name
       value: tree_resource_model
+      objectReference: {fileID: 0}
+    - target: {fileID: 1382659402361695440, guid: c2c69f8104c371c4a9ff5d159de70649, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8155590289634007560, guid: c2c69f8104c371c4a9ff5d159de70649, type: 3}
       propertyPath: m_LocalPosition.x

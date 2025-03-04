@@ -5,11 +5,21 @@ using UnityEngine;
 public class CreateBuildButton : MonoBehaviour
 {
     public ResourceCountSO ResourceCount;
+
     GameObject build;
+    GameObject unit;
+
+    Animator animatorBuild;
+    Animator animatorUnit;
     public void CreateBuild()
     {
         build = UnitActionsControllerSO.Instance.PrefabBuild.gameObject;
         CostResources costResources = build.GetComponent<CostResources>();
+
+        animatorBuild = build.GetComponent<Animator>();
+
+        unit = UnitActionsControllerSO.Instance.Unit.gameObject;
+        animatorUnit = unit.GetComponent<Animator>();
 
         if (costResources.UnitCost <= ResourceCount.Units &&
             costResources.FoodCost <= ResourceCount.Food &&
@@ -19,6 +29,10 @@ public class CreateBuildButton : MonoBehaviour
         {
             UnitActionsControllerSO.Instance.CreateBuild();
             UnitActionsControllerSO.Instance.ActiveCostResources(false);
+
+            animatorUnit.SetBool("Going", true);
+
+            animatorBuild.SetTrigger("StartBuilding");
 
             UIController.Instance.UiActive(true, false, false, false, false, false);
 

@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 3093798814410624027}
   - component: {fileID: 3288137043439588340}
   - component: {fileID: -5465817836477230598}
+  - component: {fileID: 5248909750098051505}
   m_Layer: 0
   m_Name: farm_model
   m_TagString: Untagged
@@ -148,16 +149,16 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1705587607915861198}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2.46, y: 2.46, z: 2.46}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2254459862189659583}
   - {fileID: 8700817771575106514}
   - {fileID: 4768118338690419145}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &3093798814410624027
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -223,6 +224,27 @@ MonoBehaviour:
   TreeCost: 2
   IronCost: 2
   RockCost: 2
+--- !u!95 &5248909750098051505
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705587607915861198}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 407495b58582b044cbe0591eaf91a01a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2065426160451974739
 GameObject:
   m_ObjectHideFlags: 0
@@ -1797,7 +1819,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1b03214633b09f44cb407cd9878b3b6c, type: 3}
       propertyPath: m_Name
-      value: crops_cornStageA
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1b03214633b09f44cb407cd9878b3b6c, type: 3}
       propertyPath: m_IsActive
@@ -1871,7 +1893,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c4b8556196eef54448d6accebdeec108, type: 3}
       propertyPath: m_Name
-      value: crops_cornStageB
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c4b8556196eef54448d6accebdeec108, type: 3}
       propertyPath: m_IsActive
@@ -1945,7 +1967,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c4b8556196eef54448d6accebdeec108, type: 3}
       propertyPath: m_Name
-      value: crops_cornStageB
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c4b8556196eef54448d6accebdeec108, type: 3}
       propertyPath: m_IsActive
@@ -2019,7 +2041,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c4b8556196eef54448d6accebdeec108, type: 3}
       propertyPath: m_Name
-      value: crops_cornStageB
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c4b8556196eef54448d6accebdeec108, type: 3}
       propertyPath: m_IsActive
@@ -2241,7 +2263,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 654bfd4d63bd69045b284655e80291b6, type: 3}
       propertyPath: m_Name
-      value: crops_cornStageD
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 654bfd4d63bd69045b284655e80291b6, type: 3}
       propertyPath: m_IsActive
@@ -2451,7 +2473,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 654bfd4d63bd69045b284655e80291b6, type: 3}
       propertyPath: m_Name
-      value: crops_cornStageD
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 654bfd4d63bd69045b284655e80291b6, type: 3}
       propertyPath: m_IsActive
@@ -2587,7 +2609,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 654bfd4d63bd69045b284655e80291b6, type: 3}
       propertyPath: m_Name
-      value: crops_cornStageD
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 654bfd4d63bd69045b284655e80291b6, type: 3}
       propertyPath: m_IsActive
@@ -2797,7 +2819,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1b03214633b09f44cb407cd9878b3b6c, type: 3}
       propertyPath: m_Name
-      value: crops_cornStageA
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1b03214633b09f44cb407cd9878b3b6c, type: 3}
       propertyPath: m_IsActive
@@ -3019,7 +3041,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 654bfd4d63bd69045b284655e80291b6, type: 3}
       propertyPath: m_Name
-      value: crops_cornStageD
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 654bfd4d63bd69045b284655e80291b6, type: 3}
       propertyPath: m_IsActive
@@ -3089,7 +3111,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1b03214633b09f44cb407cd9878b3b6c, type: 3}
       propertyPath: m_Name
-      value: crops_cornStageA
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1b03214633b09f44cb407cd9878b3b6c, type: 3}
       propertyPath: m_IsActive
@@ -3229,7 +3251,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c4b8556196eef54448d6accebdeec108, type: 3}
       propertyPath: m_Name
-      value: crops_cornStageB
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c4b8556196eef54448d6accebdeec108, type: 3}
       propertyPath: m_IsActive
@@ -3303,11 +3325,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1b03214633b09f44cb407cd9878b3b6c, type: 3}
       propertyPath: m_Name
-      value: crops_cornStageA
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1b03214633b09f44cb407cd9878b3b6c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1b03214633b09f44cb407cd9878b3b6c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3377,7 +3399,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 654bfd4d63bd69045b284655e80291b6, type: 3}
       propertyPath: m_Name
-      value: crops_cornStageD
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 654bfd4d63bd69045b284655e80291b6, type: 3}
       propertyPath: m_IsActive
@@ -3447,11 +3469,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1b03214633b09f44cb407cd9878b3b6c, type: 3}
       propertyPath: m_Name
-      value: crops_cornStageA
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1b03214633b09f44cb407cd9878b3b6c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1b03214633b09f44cb407cd9878b3b6c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3521,11 +3543,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1b03214633b09f44cb407cd9878b3b6c, type: 3}
       propertyPath: m_Name
-      value: crops_cornStageA
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1b03214633b09f44cb407cd9878b3b6c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1b03214633b09f44cb407cd9878b3b6c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -3669,7 +3691,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c4b8556196eef54448d6accebdeec108, type: 3}
       propertyPath: m_Name
-      value: crops_cornStageB
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c4b8556196eef54448d6accebdeec108, type: 3}
       propertyPath: m_IsActive
@@ -3821,7 +3843,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 654bfd4d63bd69045b284655e80291b6, type: 3}
       propertyPath: m_Name
-      value: crops_cornStageD
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 654bfd4d63bd69045b284655e80291b6, type: 3}
       propertyPath: m_IsActive
@@ -4031,7 +4053,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c4b8556196eef54448d6accebdeec108, type: 3}
       propertyPath: m_Name
-      value: crops_cornStageB
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c4b8556196eef54448d6accebdeec108, type: 3}
       propertyPath: m_IsActive
@@ -4179,11 +4201,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1b03214633b09f44cb407cd9878b3b6c, type: 3}
       propertyPath: m_Name
-      value: crops_cornStageA
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1b03214633b09f44cb407cd9878b3b6c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1b03214633b09f44cb407cd9878b3b6c, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -4253,7 +4275,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c4b8556196eef54448d6accebdeec108, type: 3}
       propertyPath: m_Name
-      value: crops_cornStageB
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c4b8556196eef54448d6accebdeec108, type: 3}
       propertyPath: m_IsActive
@@ -4533,7 +4555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 654bfd4d63bd69045b284655e80291b6, type: 3}
       propertyPath: m_Name
-      value: crops_cornStageD
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 654bfd4d63bd69045b284655e80291b6, type: 3}
       propertyPath: m_IsActive
@@ -4603,7 +4625,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 654bfd4d63bd69045b284655e80291b6, type: 3}
       propertyPath: m_Name
-      value: crops_cornStageD
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 654bfd4d63bd69045b284655e80291b6, type: 3}
       propertyPath: m_IsActive
@@ -4673,7 +4695,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c4b8556196eef54448d6accebdeec108, type: 3}
       propertyPath: m_Name
-      value: crops_cornStageB
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c4b8556196eef54448d6accebdeec108, type: 3}
       propertyPath: m_IsActive
@@ -4747,7 +4769,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1b03214633b09f44cb407cd9878b3b6c, type: 3}
       propertyPath: m_Name
-      value: crops_cornStageA
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 1b03214633b09f44cb407cd9878b3b6c, type: 3}
       propertyPath: m_IsActive
@@ -4887,7 +4909,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 654bfd4d63bd69045b284655e80291b6, type: 3}
       propertyPath: m_Name
-      value: crops_cornStageD
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 654bfd4d63bd69045b284655e80291b6, type: 3}
       propertyPath: m_IsActive
@@ -4957,7 +4979,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c4b8556196eef54448d6accebdeec108, type: 3}
       propertyPath: m_Name
-      value: crops_cornStageB
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c4b8556196eef54448d6accebdeec108, type: 3}
       propertyPath: m_IsActive
