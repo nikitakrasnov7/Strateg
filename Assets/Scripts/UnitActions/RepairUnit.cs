@@ -26,7 +26,7 @@ public class RepairUnit : MonoBehaviour
     public TextMeshProUGUI RockCost;
 
 
-    private void Start()
+    private void Awake()
     {
         UnitActionsControllerSO.Instance.PanelCreate = CreatePanelImage;
         UnitActionsControllerSO.Instance.CreateButton = CreateButton;

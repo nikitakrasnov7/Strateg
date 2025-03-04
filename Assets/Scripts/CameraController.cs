@@ -3,6 +3,10 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    
+
+
+
     public Transform RightDownPoint;
     public Transform LeftUpPoint;
     // TRANSFORM
