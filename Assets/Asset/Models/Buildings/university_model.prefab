@@ -602,7 +602,7 @@ GameObject:
   - component: {fileID: 5949492497799887995}
   m_Layer: 0
   m_Name: university_model
-  m_TagString: Untagged
+  m_TagString: Build
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

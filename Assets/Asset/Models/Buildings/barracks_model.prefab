@@ -414,7 +414,7 @@ GameObject:
   - component: {fileID: 913808566764030666}
   m_Layer: 0
   m_Name: barracks_model
-  m_TagString: Untagged
+  m_TagString: Build
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

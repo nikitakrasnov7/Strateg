@@ -11,13 +11,15 @@ public class CreateBuildButton : MonoBehaviour
 
     Animator animatorBuild;
     Animator animatorUnit;
+
+
     public void CreateBuild()
     {
+
         build = UnitActionsControllerSO.Instance.PrefabBuild.gameObject;
         CostResources costResources = build.GetComponent<CostResources>();
 
         animatorBuild = build.GetComponent<Animator>();
-        Debug.Log("createeee");
         unit = UnitActionsControllerSO.Instance.Unit.gameObject;
         animatorUnit = unit.GetComponent<Animator>();
 
@@ -25,21 +27,23 @@ public class CreateBuildButton : MonoBehaviour
             costResources.FoodCost <= ResourceCount.Food &&
             costResources.TreeCost <= ResourceCount.Tree &&
             costResources.IronCost <= ResourceCount.Iron &&
-            costResources.RockCost <= ResourceCount.Rock )
+            costResources.RockCost <= ResourceCount.Rock)
         {
-            Debug.Log("modmdsmdmdmddm");
             UnitActionsControllerSO.Instance.CreateBuild();
             UnitActionsControllerSO.Instance.ActiveCostResources(false);
 
+            UnitActionsControllerSO.Instance.IsUnitMove = true;
+            UnitActionsControllerSO.Instance.IsGoing = true;
             animatorUnit.SetBool("Going", true);
 
-            animatorBuild.SetTrigger("StartBuilding");
-
+ 
             UIController.Instance.UiActive(true, false, false, false, false, false);
 
             UnitActionsControllerSO.Instance.UpdateCountResorces(costResources.UnitCost, costResources.FoodCost, costResources.TreeCost, costResources.IronCost, costResources.RockCost);
 
         }
+
+        
 
 
     }
@@ -47,5 +51,6 @@ public class CreateBuildButton : MonoBehaviour
     public void DestroyBuild()
     {
         UnitActionsControllerSO.Instance.DestroyBuild();
+        UnitActionsControllerSO.Instance.PrefabBuild = null;
     }
 }

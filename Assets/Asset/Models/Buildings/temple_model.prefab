@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 2617458982842440034}
   m_Layer: 10
   m_Name: temple_model
-  m_TagString: Untagged
+  m_TagString: Build
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -1,4 +1,5 @@
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
@@ -26,11 +27,17 @@ public class UnitActionsControllerSO : MonoBehaviour
     private Image _panelCreate;
     private Image _createButton;
     [SerializeField] private bool isBuilding;
+    private bool isUnitMove = false;
+    private bool isGoing;
 
     // Build get set
     public Image PanelCreate { get { return _panelCreate; } set { _panelCreate = value; } }
     public Image CreateButton { get { return _createButton; } set { _createButton = value; } }
     public bool IsBuilding { get { return isBuilding; } set { isBuilding = value; } }
+
+    public bool IsUnitMove { get { return isUnitMove; } set { isUnitMove = value; } }
+
+    public bool IsGoing { get { return isGoing; } set { isGoing = value; } }
     //=========================================
 
     // Resources count
@@ -44,8 +51,8 @@ public class UnitActionsControllerSO : MonoBehaviour
     public TextMeshProUGUI Units { get { return _units; } set { _units = value; } }
     public TextMeshProUGUI Food { get { return _food; } set { _food = value; } }
     public TextMeshProUGUI Tree { get { return _tree; } set { _tree = value; } }
-    public TextMeshProUGUI Iron { get { return _iron; }set { _iron = value; } }
-    public TextMeshProUGUI Rock { get { return _rock; }set { _rock = value; } }
+    public TextMeshProUGUI Iron { get { return _iron; } set { _iron = value; } }
+    public TextMeshProUGUI Rock { get { return _rock; } set { _rock = value; } }
     //=========================================
 
     public ResourceCountSO ResourceCount;
@@ -83,6 +90,11 @@ public class UnitActionsControllerSO : MonoBehaviour
 
     private void Update()
     {
+        if (isUnitMove)
+        {
+            UnitMoveToBuilding();
+        }
+
         if (agent != null)
         {
             float distance = Vector3.Distance(agent.transform.position, agent.destination);
@@ -91,7 +103,7 @@ public class UnitActionsControllerSO : MonoBehaviour
                 unit = null;
                 agent = null;
             }
-            
+
         }
     }
 
@@ -130,11 +142,11 @@ public class UnitActionsControllerSO : MonoBehaviour
 
     public void UpdateCostResorces(int costUnit, int costFood, int costTree, int costIron, int costRock)
     {
-        UnitsCost.text = "-"+costUnit.ToString();
-        FoodCost.text = "-"+costFood.ToString();
-        TreeCost.text = "-"+costTree.ToString();
-        IronCost.text = "-"+costIron.ToString();
-        RockCost.text = "-"+costRock.ToString();
+        UnitsCost.text = "-" + costUnit.ToString();
+        FoodCost.text = "-" + costFood.ToString();
+        TreeCost.text = "-" + costTree.ToString();
+        IronCost.text = "-" + costIron.ToString();
+        RockCost.text = "-" + costRock.ToString();
     }
     public void UpdateCountResorces(int countUnit, int countFood, int countTree, int countIron, int countRock)
     {
@@ -162,7 +174,80 @@ public class UnitActionsControllerSO : MonoBehaviour
 
     }
 
+    public void Building(GameObject PrefabForGame)
+    {
+
+        if (IsBuilding)
+        {
+
+            Vector3 center = new Vector3(Screen.width / 2, Screen.height / 2, 0);
+
+            Ray ray = Camera.main.ScreenPointToRay(center);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+
+                if (hit.collider.name == "Terrain")
+                {
+                    var test = hit.point;
+
+                    var build = Instantiate(PrefabForGame);
+                    PrefabBuild = build.gameObject;
+                    build.AddComponent<ColliderFunctions>();
+
+                    build.transform.position = test;
 
 
+                    if (PanelCreate != null)
+                    {
+                        CreatePanelController(true);
+                    }
+
+
+                }
+            }
+
+        }
+
+
+    }
+
+    public void UnitMoveToBuilding()
+    {
+        if (Unit != null || PrefabBuild != null)
+        {
+            if (Unit.GetComponent<NavMeshAgent>() != null)
+            {
+                NavMeshAgent agent = Unit.GetComponent<NavMeshAgent>();
+                UnitCollisionEnter col = unit.GetComponent<UnitCollisionEnter>();
+                if (col.isGoing)
+                {
+                    agent.destination = PrefabBuild.gameObject.transform.position;
+                    
+                }
+                
+                else 
+                {
+                    agent.isStopped = true;
+                    StartAnimator("StartBuilding");
+
+                    IsGoing = true;
+                    prefabBuild = null;
+                    unit = null;
+                }
+            }
+
+        }
+
+    }
+
+    public void StartAnimator(string triggerName)
+    {
+        Animator BuildAnim = prefabBuild.GetComponent<Animator>();
+        BuildAnim.SetTrigger(triggerName);
+
+
+    }
 
 }

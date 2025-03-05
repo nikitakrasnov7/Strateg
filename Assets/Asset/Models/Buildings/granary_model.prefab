@@ -1731,7 +1731,7 @@ GameObject:
   - component: {fileID: 4269225686518069889}
   m_Layer: 10
   m_Name: granary_model
-  m_TagString: Untagged
+  m_TagString: Build
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
