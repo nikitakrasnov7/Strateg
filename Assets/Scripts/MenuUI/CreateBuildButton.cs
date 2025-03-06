@@ -9,6 +9,8 @@ public class CreateBuildButton : MonoBehaviour
     GameObject build;
     GameObject unit;
 
+    BuildMan BuildMan;
+
     Animator animatorBuild;
     Animator animatorUnit;
 
@@ -18,10 +20,12 @@ public class CreateBuildButton : MonoBehaviour
 
         build = UnitActionsControllerSO.Instance.PrefabBuild.gameObject;
         CostResources costResources = build.GetComponent<CostResources>();
-
         animatorBuild = build.GetComponent<Animator>();
+
+
         unit = UnitActionsControllerSO.Instance.Unit.gameObject;
         animatorUnit = unit.GetComponent<Animator>();
+
 
         if (costResources.UnitCost <= ResourceCount.Units &&
             costResources.FoodCost <= ResourceCount.Food &&
@@ -32,9 +36,13 @@ public class CreateBuildButton : MonoBehaviour
             UnitActionsControllerSO.Instance.CreateBuild();
             UnitActionsControllerSO.Instance.ActiveCostResources(false);
 
-            UnitActionsControllerSO.Instance.IsUnitMove = true;
-            UnitActionsControllerSO.Instance.IsGoing = true;
+            BuildMan = unit.GetComponent<BuildMan>();
+            BuildMan.ActivationBuilding(build);
+
+            UnitActionsControllerSO.Instance.Unit = null;
+            UnitActionsControllerSO.Instance.PrefabBuild = null;
             animatorUnit.SetBool("Going", true);
+
 
  
             UIController.Instance.UiActive(true, false, false, false, false, false);

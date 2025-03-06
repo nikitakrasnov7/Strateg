@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
@@ -70,6 +71,9 @@ public class UnitActionsControllerSO : MonoBehaviour
     public TextMeshProUGUI IronCost { get { return _ironCost; } set { _ironCost = value; } }
     public TextMeshProUGUI RockCost { get { return _rockCost; } set { _rockCost = value; } }
     //=========================================
+
+
+    public Animator AnimUnit;
 
 
 
@@ -215,37 +219,47 @@ public class UnitActionsControllerSO : MonoBehaviour
 
     public void UnitMoveToBuilding()
     {
-        if (Unit != null || PrefabBuild != null)
-        {
-            if (Unit.GetComponent<NavMeshAgent>() != null)
-            {
-                NavMeshAgent agent = Unit.GetComponent<NavMeshAgent>();
-                UnitCollisionEnter col = unit.GetComponent<UnitCollisionEnter>();
-                if (col.isGoing)
-                {
-                    agent.destination = PrefabBuild.gameObject.transform.position;
+        //if (Unit != null || PrefabBuild != null)
+        //{
+        //    if (Unit.GetComponent<NavMeshAgent>() != null)
+        //    {
+        //        NavMeshAgent agent = Unit.GetComponent<NavMeshAgent>();
+        //        UnitCollisionEnter col = unit.GetComponent<UnitCollisionEnter>();
+        //        if (col.isGoing)
+        //        {
+        //            GameObject prefBuild = PrefabBuild.gameObject;
+        //            prefabBuild = null;
+        //            agent.destination = prefBuild.transform.position;
                     
-                }
+        //        }
                 
-                else 
-                {
-                    agent.isStopped = true;
-                    StartAnimator("StartBuilding");
+        //        else 
+        //        {
+        //            agent.isStopped = true;
+        //            //StartAnimator("StartBuilding");
 
-                    IsGoing = true;
-                    prefabBuild = null;
-                    unit = null;
-                }
-            }
+        //            isUnitMove = false;
+        //            col.isGoing = true;
+        //            prefabBuild = null;
+        //            unit = null;
+        //        }
+        //    }
 
-        }
+        //}
 
     }
 
-    public void StartAnimator(string triggerName)
+    public void StartAnimator(GameObject unit, string triggerName, GameObject build)
     {
-        Animator BuildAnim = prefabBuild.GetComponent<Animator>();
+        Animator BuildAnim = build.GetComponent<Animator>();
         BuildAnim.SetTrigger(triggerName);
+
+        if (BuildAnim)
+        {
+            Debug.Log("");
+            //unit.GetComponent<Animator>().SetTrigger("Ending");
+            unit.GetComponent<FinishBuilding>().buildingAnimator = BuildAnim;
+        }
 
 
     }
