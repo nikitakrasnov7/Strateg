@@ -1,109 +1,113 @@
 
+using System.Security.Principal;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    
-
-
-
     public Transform RightDownPoint;
     public Transform LeftUpPoint;
-    // TRANSFORM
-    private float _minSwipeDistation = 35f;
-    private float _minSwipeAngel = 15f;
-    private float _maxSpeed = 6f;
-    private float _distation = 5f;
 
-    public Rigidbody Rigidbody;
+    public bool canMove = true;
+    public float moveSpeed = 1f;
+    public float zoomSpeed = 5f;
+    public float minZoom = 20f;
+    public float maxZoom = 80f;
+    public float zoomSmoothTime = 0.1f;
+    public Camera cam;
 
-    private Vector3 _startPosition;
-    private Vector3 _currentVelocity = Vector3.zero;
+    private Vector3 touchStartPos;
+    private float targetZoom;
+    private float currentZoomVelocity;
 
-    //  SCALE CAMERA
-    public Camera Camera;
-    private float _zoomSpeed = 1f;
-    private float _minZoom = 30f;
-    private float _maxZoom = 80f;
-
-
-
-    private void Start()
+    void Start()
     {
-        UnitActionsControllerSO.Instance.IsMove = true;
+        targetZoom = cam.fieldOfView;
     }
+
     void Update()
     {
-        if (UnitActionsControllerSO.Instance.IsMove)
+        if (UnitActionsControllerSO.Instance.IsMove) HandleMovement();
+        HandleZoom();
+        SmoothZoom();
+    }
+
+    void HandleMovement()
+    {
+        if (Input.touchCount == 1)
         {
-            if (Input.touchCount == 1)
+            Touch touch = Input.GetTouch(0);
+
+            if (touch.phase == TouchPhase.Began)
             {
-                Touch touch = Input.GetTouch(0);
-
-                if (touch.phase == TouchPhase.Began)
-                {
-                    _startPosition = touch.position;
-                    _currentVelocity = Rigidbody.velocity;
-                }
-                else if (touch.phase == TouchPhase.Moved)
-                {
-                    Vector3 endPos = touch.position;
-                    Vector3 swipe = endPos - _startPosition;
-
-
-
-                    float dir = Mathf.Atan2(swipe.y, swipe.x) * Mathf.Rad2Deg;
-                    Vector3 test;
-                    if (dir > -_minSwipeAngel && dir <= _minSwipeAngel)
-                    {
-                        test = (gameObject.transform.position.z < LeftUpPoint.position.z) ? Vector3.forward : Vector3.zero;
-                        //{ test = Vector3.forward; }
-                        //else { test = Vector3.zero; }
-                    }
-                    else if (dir > _minSwipeAngel && dir <= 180 - _minSwipeAngel)
-                    {
-                        test = (gameObject.transform.position.x > RightDownPoint.position.x) ? Vector3.left : Vector3.zero;
-                    }
-                    else if (dir > -180 + _minSwipeAngel && dir <= -_minSwipeDistation)
-                    {
-                        test = (gameObject.transform.position.x < LeftUpPoint.position.x) ? Vector3.right : Vector3.zero;
-                    }
-                    else
-                    {
-                        test = (gameObject.transform.position.z > RightDownPoint.position.z) ? Vector3.back : Vector3.zero;
-                    }
-
-
-                    Rigidbody.AddForce(test * _maxSpeed, ForceMode.Impulse);
-
-                }
-
-
-
-
+                touchStartPos = GetWorldPosition(touch.position); //начальна€ позици€
             }
-
-            else if (Input.touchCount == 2)
+            else if (touch.phase == TouchPhase.Moved)
             {
-                Touch touch0 = Input.GetTouch(0);
-                Touch touch1 = Input.GetTouch(1);
+                Vector3 direction = touchStartPos - GetWorldPosition(touch.position); // направление движени€
+                Vector3 targetPosition = cam.transform.position + direction * moveSpeed; //нова€ позици€ 
+                cam.transform.position = Vector3.Lerp(cam.transform.position, targetPosition, Time.deltaTime * 5f); // плавное передвижене
 
-                Vector3 touchZero = touch0.position - touch0.deltaPosition;
-                Vector3 touchOne = touch1.position - touch1.deltaPosition;
-
-                float magn = (touchZero - touchOne).magnitude;
-                float current = (touch0.position - touch1.position).magnitude;
-
-                float diff = magn - current;
-
-                Camera.fieldOfView += diff * _zoomSpeed;
-                Camera.fieldOfView = Mathf.Clamp(Camera.fieldOfView, _minZoom, _maxZoom);
+                ClampCameraPosition();
             }
-
         }
-        _currentVelocity = Rigidbody.velocity;
-        _currentVelocity *= 1f - _distation * Time.deltaTime;
-        Rigidbody.velocity = _currentVelocity;
+    }
+
+    /// <summary>
+    ///  онвертирует координаты экрана в мировые координаты
+    /// </summary>
+    /// <param name="screenPosition"></param>
+    /// <returns></returns>
+    Vector3 GetWorldPosition(Vector2 screenPosition)
+    {
+        Ray ray = cam.ScreenPointToRay(screenPosition);
+        Plane groundPlane = new Plane(Vector3.up, Vector3.zero); // ѕлоскость XZ
+
+        if (groundPlane.Raycast(ray, out float distance))
+        {
+            return ray.GetPoint(distance);// ¬озвращаем точку пересечени€
+        }
+
+        return Vector3.zero;
+    }
+
+    /// <summary>
+    /// ќграничение движени€ камеры
+    /// </summary>
+    void ClampCameraPosition()
+    {
+        float clampedX = Mathf.Clamp(cam.transform.position.x, RightDownPoint.position.x, LeftUpPoint.position.x);
+        float clampedZ = Mathf.Clamp(cam.transform.position.z, RightDownPoint.position.z, LeftUpPoint.position.z);
+
+        cam.transform.position = new Vector3(clampedX, cam.transform.position.y, clampedZ);
+    }
+
+    void HandleZoom()
+    {
+        if (Input.touchCount == 2)
+        {
+            Touch touchZero = Input.GetTouch(0);
+            Touch touchOne = Input.GetTouch(1);
+
+            // предыдущие позиции пальцев
+            Vector2 touchZeroPrevPos = touchZero.position - touchZero.deltaPosition;
+            Vector2 touchOnePrevPos = touchOne.position - touchOne.deltaPosition;
+
+            // вычисл€ем рассто€ние между пальцами
+            float prevTouchDeltaMag = (touchZeroPrevPos - touchOnePrevPos).magnitude;
+            float touchDeltaMag = (touchZero.position - touchOne.position).magnitude;
+
+            //разница
+            float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
+
+            // примен€ем изменение к зуму и ограничиваем его диапазон
+            targetZoom = Mathf.Clamp(cam.fieldOfView + deltaMagnitudeDiff * zoomSpeed, minZoom, maxZoom);
+        }
+    }
+
+    //плавное изменене зума
+    void SmoothZoom()
+    {
+        cam.fieldOfView = Mathf.SmoothDamp(cam.fieldOfView, targetZoom, ref currentZoomVelocity, zoomSmoothTime);
     }
 }
 

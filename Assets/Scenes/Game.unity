@@ -838,8 +838,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RightDownPoint: {fileID: 1746282936}
   LeftUpPoint: {fileID: 893365359}
-  Rigidbody: {fileID: 1534902743}
-  Camera: {fileID: 1373337906}
+  canMove: 1
+  moveSpeed: 1
+  zoomSpeed: 5
+  minZoom: 20
+  maxZoom: 80
+  zoomSmoothTime: 0.1
+  cam: {fileID: 1373337906}
 --- !u!114 &1534902745
 MonoBehaviour:
   m_ObjectHideFlags: 0
