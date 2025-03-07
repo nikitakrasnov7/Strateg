@@ -12,9 +12,28 @@ public class UnitController : MonoBehaviour
     public List<ResourseCost> resource;
     public float zonaActive;
 
+    bool _isGoing;
+    private void Update()
+    {
+        if (_isGoing)
+        {
+
+            GoingToPlayerPosition();
+        }
+    }
+
+    public void GoingToPlayerPosition()
+    {
+
+    }
+
+    public void GoingActiveToggle()
+    {
+        _isGoing = !_isGoing;
+    }
 
 
-    
+
 
 
 }

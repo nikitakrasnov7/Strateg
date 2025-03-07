@@ -5876,7 +5876,7 @@ GameObject:
   - component: {fileID: 910308481}
   - component: {fileID: 910308482}
   m_Layer: 0
-  m_Name: Icon
+  m_Name: ExtractionResources
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5994,7 +5994,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 910308479}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 910308481}
+        m_TargetAssemblyTypeName: CollectionResourcesUnit, Assembly-CSharp
+        m_MethodName: UnitToResources
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &952517081
 GameObject:
   m_ObjectHideFlags: 0
@@ -8130,18 +8142,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventSys: {fileID: 309499182}
   Build: {fileID: 2126378730}
-  CreatePanelImage: {fileID: 645888752}
-  CreateButton: {fileID: 170832451}
-  Units: {fileID: 333576926}
-  Food: {fileID: 1209445336}
-  Tree: {fileID: 1632710770}
-  Iron: {fileID: 1213957080}
-  Rock: {fileID: 677247697}
-  UnitsCost: {fileID: 1863413588}
-  FoodCost: {fileID: 128654697}
-  TreeCost: {fileID: 1548207805}
-  IronCost: {fileID: 647835120}
-  RockCost: {fileID: 723697954}
 --- !u!114 &1277778643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8318,6 +8318,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51af65848ad7081418ecf0f75e8fa06f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CreatePanelImage: {fileID: 645888752}
+  CreateButton: {fileID: 170832451}
+  Units: {fileID: 333576926}
+  Food: {fileID: 1209445336}
+  Tree: {fileID: 1632710770}
+  Iron: {fileID: 1213957080}
+  Rock: {fileID: 677247697}
+  UnitsCost: {fileID: 1863413588}
+  FoodCost: {fileID: 128654697}
+  TreeCost: {fileID: 1548207805}
+  IronCost: {fileID: 647835120}
+  RockCost: {fileID: 723697954}
   BuildCom: {fileID: 165585583}
   WarriorsCom: {fileID: 1141477538}
   HealerCom: {fileID: 2046850698}

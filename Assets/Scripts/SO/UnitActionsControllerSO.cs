@@ -75,6 +75,8 @@ public class UnitActionsControllerSO : MonoBehaviour
 
     public Animator AnimUnit;
 
+    // ====================================
+    public bool isExtraction;
 
 
 
@@ -92,12 +94,20 @@ public class UnitActionsControllerSO : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        _units.text = ResourceCount.Units.ToString();
+        _food.text = ResourceCount.Food.ToString();
+        _tree.text = ResourceCount.Tree.ToString();
+        _iron.text = ResourceCount.Iron.ToString();
+        _rock.text = ResourceCount.Rock.ToString();
+
+
+    }
+
     private void Update()
     {
-        if (isUnitMove)
-        {
-            UnitMoveToBuilding();
-        }
+
 
         if (agent != null)
         {
@@ -181,21 +191,19 @@ public class UnitActionsControllerSO : MonoBehaviour
     public void Building(GameObject PrefabForGame)
     {
 
-        if (IsBuilding)
+        Vector3 center = new Vector3(Screen.width / 2, Screen.height / 2, 0);
+
+        Ray ray = Camera.main.ScreenPointToRay(center);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit))
         {
-
-            Vector3 center = new Vector3(Screen.width / 2, Screen.height / 2, 0);
-
-            Ray ray = Camera.main.ScreenPointToRay(center);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit))
+            if (IsBuilding)
             {
 
                 if (hit.collider.name == "Terrain")
                 {
                     var test = hit.point;
-
                     var build = Instantiate(PrefabForGame);
                     PrefabBuild = build.gameObject;
                     build.AddComponent<ColliderFunctions>();
@@ -207,47 +215,13 @@ public class UnitActionsControllerSO : MonoBehaviour
                     {
                         CreatePanelController(true);
                     }
-
-
                 }
             }
-
         }
 
-
     }
 
-    public void UnitMoveToBuilding()
-    {
-        //if (Unit != null || PrefabBuild != null)
-        //{
-        //    if (Unit.GetComponent<NavMeshAgent>() != null)
-        //    {
-        //        NavMeshAgent agent = Unit.GetComponent<NavMeshAgent>();
-        //        UnitCollisionEnter col = unit.GetComponent<UnitCollisionEnter>();
-        //        if (col.isGoing)
-        //        {
-        //            GameObject prefBuild = PrefabBuild.gameObject;
-        //            prefabBuild = null;
-        //            agent.destination = prefBuild.transform.position;
-                    
-        //        }
-                
-        //        else 
-        //        {
-        //            agent.isStopped = true;
-        //            //StartAnimator("StartBuilding");
 
-        //            isUnitMove = false;
-        //            col.isGoing = true;
-        //            prefabBuild = null;
-        //            unit = null;
-        //        }
-        //    }
-
-        //}
-
-    }
 
     public void StartAnimator(GameObject unit, string triggerName, GameObject build)
     {
@@ -257,7 +231,6 @@ public class UnitActionsControllerSO : MonoBehaviour
         if (BuildAnim)
         {
             Debug.Log("");
-            //unit.GetComponent<Animator>().SetTrigger("Ending");
             unit.GetComponent<FinishBuilding>().buildingAnimator = BuildAnim;
         }
 

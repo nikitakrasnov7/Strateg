@@ -193,6 +193,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Rock
       objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 7c77c455beaeee649bd54f8df5f3af77, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 7c77c455beaeee649bd54f8df5f3af77, type: 3}
       propertyPath: m_LocalScale.x
       value: 6.76
@@ -259,6 +263,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100002, guid: 7c77c455beaeee649bd54f8df5f3af77, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7532379775536258490}
+    - targetCorrespondingSourceObject: {fileID: 100002, guid: 7c77c455beaeee649bd54f8df5f3af77, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6695235157845933486}
     - targetCorrespondingSourceObject: {fileID: 100000, guid: 7c77c455beaeee649bd54f8df5f3af77, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2729809816033075662}
@@ -289,6 +296,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.3431085, y: 0.7913089, z: 1.046592}
   m_Center: {x: -0.48670954, y: 0.30986655, z: -0.51817834}
+--- !u!95 &6695235157845933486
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4412417125401228052}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 83e75e9116c2c1c4ca2ba82e518d7d40, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4412417125401228054 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 7c77c455beaeee649bd54f8df5f3af77, type: 3}

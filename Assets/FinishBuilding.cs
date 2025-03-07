@@ -26,7 +26,11 @@ public class FinishBuilding : MonoBehaviour
         animState = buildingAnimator.GetCurrentAnimatorStateInfo(0);
         if (animState.IsName("Finish"))
         {
+            unitAnimator.SetBool("Going", false);
+            unitAnimator.SetBool("Building", false);
             unitAnimator.SetTrigger("EndUnit");
+            buildingAnimator = null;
         }
+        
     }
 }

@@ -187,6 +187,8 @@ MonoBehaviour:
   isMove: 1
   isBuilding: 0
   ResourceCount: {fileID: 11400000, guid: 90b6331ec9a5a1846bbf6882dc75d98f, type: 2}
+  AnimUnit: {fileID: 0}
+  isExtraction: 0
 --- !u!4 &261157700
 Transform:
   m_ObjectHideFlags: 0

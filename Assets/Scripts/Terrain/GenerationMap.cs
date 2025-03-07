@@ -23,22 +23,22 @@ public class GenerationMap : MonoBehaviour
 
     public Terrain Terrain;
 
-    
+
     private List<Vector3> _listVector = new List<Vector3>();
 
     [Header("Point for Spawn")]
-    public  List<GameObject> _listPointer = new List<GameObject>();
+    public List<GameObject> _listPointer = new List<GameObject>();
     public GameObject PointPlayer;
     public GameObject CameraController;
 
     public GameObject RightDownPoint;
     public GameObject LeftUpPoint;
-  
+
 
     [Header("Prefab player and enemy")]
     public GameObject PrefabPlayer;
     public GameObject PrefabEnemy;
-    
+
 
 
     private void OnEnable()
@@ -68,8 +68,8 @@ public class GenerationMap : MonoBehaviour
 
         PointPlayer.transform.position = new Vector3(_terrainSize / 10, 0, _terrainSize / 10);
 
-        LeftUpPoint.transform.position = new Vector3(_terrainSize-50,0,_terrainSize-50);
-        RightDownPoint.transform.position = new Vector3(-10, 0, -10);
+        LeftUpPoint.transform.position = new Vector3(_terrainSize - 50, 0, _terrainSize - 50);
+        RightDownPoint.transform.position = new Vector3(-50, 0, -50);
 
         _listVector.Add(new Vector3(_terrainSize / 6, 0, _terrainSize / 2));
         _listVector.Add(new Vector3(_terrainSize / 6, 0, _terrainSize * 5 / 6));
@@ -81,23 +81,32 @@ public class GenerationMap : MonoBehaviour
         _listVector.Add(new Vector3((_terrainSize / 6) * 5, 0, _terrainSize * 5 / 6));
 
         GameObject Player = Instantiate(PrefabPlayer, PointPlayer.transform.position, Quaternion.identity);
-        CameraController.transform.position = new Vector3(Player.transform.position.x-40, 0,Player.transform.position.z);
+        CameraController.transform.position = new Vector3(Player.transform.position.x - 40, 0, Player.transform.position.z);
 
         CreateEnemy();
 
-        
+
     }
-   
+
 
     public void CreateEnemy()
     {
+
         for (int i = 0; i < saveEnemyDataSO._enemyList.Count; i++)
         {
-            _listPointer[i].transform.position = _listVector[i];
-            GameObject enemy = Instantiate(PrefabEnemy, _listPointer[i].transform);
-            enemy.GetComponentInChildren<TextMeshProUGUI>().text = saveEnemyDataSO._enemyList[i];
-            enemy.GetComponentInChildren<Image>().color = saveEnemyDataSO._enemyColorList[i];
+            if (_listPointer[i] != null)
+            {
+                if (PrefabEnemy != null)
+                {
+                    _listPointer[i].transform.position = _listVector[i];
+                    GameObject enemy = Instantiate(PrefabEnemy, _listPointer[i].transform);
+                    enemy.GetComponentInChildren<TextMeshProUGUI>().text = saveEnemyDataSO._enemyList[i];
+                    enemy.GetComponentInChildren<Image>().color = saveEnemyDataSO._enemyColorList[i];
+                }
+
+            }
         }
+
     }
     void GenerationResouces()
     {

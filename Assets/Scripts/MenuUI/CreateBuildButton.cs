@@ -17,41 +17,44 @@ public class CreateBuildButton : MonoBehaviour
 
     public void CreateBuild()
     {
-
-        build = UnitActionsControllerSO.Instance.PrefabBuild.gameObject;
-        CostResources costResources = build.GetComponent<CostResources>();
-        animatorBuild = build.GetComponent<Animator>();
-
-
-        unit = UnitActionsControllerSO.Instance.Unit.gameObject;
-        animatorUnit = unit.GetComponent<Animator>();
-
-
-        if (costResources.UnitCost <= ResourceCount.Units &&
-            costResources.FoodCost <= ResourceCount.Food &&
-            costResources.TreeCost <= ResourceCount.Tree &&
-            costResources.IronCost <= ResourceCount.Iron &&
-            costResources.RockCost <= ResourceCount.Rock)
+        if (UnitActionsControllerSO.Instance.Unit != null)
         {
-            UnitActionsControllerSO.Instance.CreateBuild();
-            UnitActionsControllerSO.Instance.ActiveCostResources(false);
-
-            BuildMan = unit.GetComponent<BuildMan>();
-            BuildMan.ActivationBuilding(build);
-
-            UnitActionsControllerSO.Instance.Unit = null;
-            UnitActionsControllerSO.Instance.PrefabBuild = null;
-            animatorUnit.SetBool("Going", true);
+            build = UnitActionsControllerSO.Instance.PrefabBuild.gameObject;
+            CostResources costResources = build.GetComponent<CostResources>();
+            animatorBuild = build.GetComponent<Animator>();
 
 
- 
-            UIController.Instance.UiActive(true, false, false, false, false, false);
+            unit = UnitActionsControllerSO.Instance.Unit.gameObject;
+            animatorUnit = unit.GetComponent<Animator>();
 
-            UnitActionsControllerSO.Instance.UpdateCountResorces(costResources.UnitCost, costResources.FoodCost, costResources.TreeCost, costResources.IronCost, costResources.RockCost);
 
+            if (costResources.UnitCost <= ResourceCount.Units &&
+                costResources.FoodCost <= ResourceCount.Food &&
+                costResources.TreeCost <= ResourceCount.Tree &&
+                costResources.IronCost <= ResourceCount.Iron &&
+                costResources.RockCost <= ResourceCount.Rock)
+            {
+                UnitActionsControllerSO.Instance.CreateBuild();
+                UnitActionsControllerSO.Instance.ActiveCostResources(false);
+
+                BuildMan = unit.GetComponent<BuildMan>();
+                BuildMan.ActivationBuilding(build);
+
+                UnitActionsControllerSO.Instance.Unit = null;
+                UnitActionsControllerSO.Instance.PrefabBuild = null;
+                animatorUnit.SetBool("Going", true);
+
+
+
+                UIController.Instance.UiActive(true, false, false, false, false, false);
+
+                UnitActionsControllerSO.Instance.UpdateCountResorces(costResources.UnitCost, costResources.FoodCost, costResources.TreeCost, costResources.IronCost, costResources.RockCost);
+
+            }
         }
 
-        
+
+
 
 
     }

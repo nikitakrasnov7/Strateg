@@ -1,10 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
+
+using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
+
+    public Image CreatePanelImage;
+    public Image CreateButton;
+
+    [Header("Text Count Resources")]
+    public TextMeshProUGUI Units;
+    public TextMeshProUGUI Food;
+    public TextMeshProUGUI Tree;
+    public TextMeshProUGUI Iron;
+    public TextMeshProUGUI Rock;
+
+    [Header("Text Cost Resources")]
+    public TextMeshProUGUI UnitsCost;
+    public TextMeshProUGUI FoodCost;
+    public TextMeshProUGUI TreeCost;
+    public TextMeshProUGUI IronCost;
+    public TextMeshProUGUI RockCost;
+
+    [Header("Panel Actions")]
     public GameObject BuildCom;
     public GameObject WarriorsCom;
     public GameObject HealerCom;
@@ -13,19 +32,7 @@ public class UIController : MonoBehaviour
     public GameObject Build;
     public GameObject Workout;
 
-    private void OnBuildingButtonClicked()
-    {
-        var buttonBuild = EventSystem.current.currentSelectedGameObject.GetComponent<UIButtonBuild>();
-        if (buttonBuild != null)
-        {
-            buttonBuild.OnButtonClicked += SetGameObject;
-        }
-    }
 
-    private void SetGameObject(GameObject go)
-    {
-        Debug.Log(go.name);
-    }
 
 
 
@@ -52,6 +59,21 @@ public class UIController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        UnitActionsControllerSO.Instance.PanelCreate = CreatePanelImage;
+        UnitActionsControllerSO.Instance.CreateButton = CreateButton;
+
+        UnitActionsControllerSO.Instance.Units = Units;
+        UnitActionsControllerSO.Instance.Food = Food;
+        UnitActionsControllerSO.Instance.Tree = Tree;
+        UnitActionsControllerSO.Instance.Iron = Iron;
+        UnitActionsControllerSO.Instance.Rock = Rock;
+
+        UnitActionsControllerSO.Instance.UnitsCost = UnitsCost;
+        UnitActionsControllerSO.Instance.FoodCost = FoodCost;
+        UnitActionsControllerSO.Instance.TreeCost = TreeCost;
+        UnitActionsControllerSO.Instance.IronCost = IronCost;
+        UnitActionsControllerSO.Instance.RockCost = RockCost;
     }
 
 
