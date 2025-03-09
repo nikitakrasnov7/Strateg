@@ -79,6 +79,10 @@ public class UnitActionsControllerSO : MonoBehaviour
     public bool isExtraction;
 
 
+    GameObject rayHitObject;
+
+    public GameObject RayHitObject { get { return rayHitObject; }set { rayHitObject = value; } }
+
 
     private static UnitActionsControllerSO instance;
 
@@ -237,4 +241,9 @@ public class UnitActionsControllerSO : MonoBehaviour
 
     }
 
+    public void ActivationUnit(bool active)
+    {
+        ActivationUnits activation;
+        activation = unit.GetComponent<ActivationUnits>();
+    }
 }

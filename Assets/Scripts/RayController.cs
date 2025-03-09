@@ -23,25 +23,35 @@ public class RayController : MonoBehaviour
 
                 if (Physics.Raycast(ray, out hit))
                 {
-
+                    
                     if (hit.collider.tag == "Unit")
                     {
-                        unitController = hit.collider.GetComponent<UnitController>();
+                        GameObject unitPref = hit.collider.gameObject;
+                        unitController = unitPref.GetComponent<UnitController>();
                         unit = unitController.unit;
 
                         _unitActionsControllerSO.Unit = hit.collider.gameObject;
-                        
+
+                        UIController.Instance.InformationPanelClose(true);
+                        UIController.Instance.InformationPanel(unitPref);
 
                         UiActive(unit);
+
                         
+
                         DownInventoryManager.Instance.ActiveTrue();
+
+                        
 
                     }
                     else
                     {
                         unitController = null;
-                        //DownInventoryManager.Instance.ActiveFalse();
+                        UIController.Instance.InformationPanelClose(false);
+
                     }
+
+                    UnitActionsControllerSO.Instance.RayHitObject = hit.collider.gameObject;
                 }
 
 

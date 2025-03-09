@@ -8,7 +8,7 @@ public class CollectionResourcesUnit : MonoBehaviour
     GameObject Unit;
     Animator animator;
 
-     void UnitToResources()
+    void UnitToResources()
     {
         if (UnitActionsControllerSO.Instance.Unit != null)
         {
@@ -17,8 +17,8 @@ public class CollectionResourcesUnit : MonoBehaviour
             Unit = UnitActionsControllerSO.Instance.Unit;
             animator = Unit.GetComponent<Animator>();
             BuildMan buildMan = Unit.GetComponent<BuildMan>();
+
             buildMan.isExtractionResources = true;
-            animator.SetBool("Going", true);
 
             UnitActionsControllerSO.Instance.IsBuilding = false;
             UIController.Instance.UiActive(true, false, false, false, false, false);

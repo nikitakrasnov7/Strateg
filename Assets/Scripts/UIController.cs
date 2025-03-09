@@ -1,5 +1,6 @@
 
 using TMPro;
+using UnityEditor.AdaptivePerformance.Editor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -31,6 +32,24 @@ public class UIController : MonoBehaviour
 
     public GameObject Build;
     public GameObject Workout;
+
+    [Header("Unit and build Information Panel")]
+    public GameObject FullPanel;
+    
+    public Image IconUnit;
+
+    public Image IconTreeUnit;
+    public Image IconRockUnit;
+    public Image IconIronUnit;
+
+    public TextMeshProUGUI CountTreeUnit;
+    public TextMeshProUGUI CountRockUnit;
+    public TextMeshProUGUI CountIronUnit;
+
+    public TextMeshProUGUI NameUnit;
+    public TextMeshProUGUI ProgressBarUnit;
+    public Slider ProgressSlider;
+
 
 
 
@@ -87,7 +106,37 @@ public class UIController : MonoBehaviour
         Workout.SetActive(workout);
 
     }
+    public void InformationPanel(GameObject unit)
+    {
+        
+        if(unit.GetComponent<UnitController>() != null)
+        {
+            UnitController unCon = unit.GetComponent<UnitController>();
+            IconUnit.sprite = unCon.Icon;
+            NameUnit.text = unCon.unit.ToString();
+            ProgressSlider.value = unCon.hp / 100f;
+            ProgressBarUnit.text = $"{unCon.hp} / {unCon.hp}";
 
+            if (unCon.unit == Unit.Villager) 
+            {
+                IconTreeUnit.gameObject.SetActive(true);
+                IconRockUnit.gameObject.SetActive(true);
+                IconIronUnit.gameObject.SetActive(true);
 
+            }
+            else
+            {
+                IconTreeUnit.gameObject.SetActive(false);
+                IconRockUnit.gameObject.SetActive(false);
+                IconIronUnit.gameObject.SetActive(false);
+            }
+
+        }
+    }
+
+    public void InformationPanelClose(bool active)
+    {
+       FullPanel.SetActive(active);
+    }
 
 }
