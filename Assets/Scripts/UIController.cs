@@ -1,6 +1,5 @@
 
 using TMPro;
-using UnityEditor.AdaptivePerformance.Editor;
 using UnityEngine;
 using UnityEngine.UI;
 

@@ -80,8 +80,13 @@ public class GenerationMap : MonoBehaviour
         _listVector.Add(new Vector3((_terrainSize / 6) * 5, 0, _terrainSize / 2));
         _listVector.Add(new Vector3((_terrainSize / 6) * 5, 0, _terrainSize * 5 / 6));
 
-        GameObject Player = Instantiate(PrefabPlayer, PointPlayer.transform.position, Quaternion.identity);
-        CameraController.transform.position = new Vector3(Player.transform.position.x - 40, 0, Player.transform.position.z);
+        if (PrefabPlayer != null)
+        {
+            GameObject Player = Instantiate(PrefabPlayer, PointPlayer.transform.position, Quaternion.identity);
+
+            CameraController.transform.position = new Vector3(Player.transform.position.x - 40, 0, Player.transform.position.z);
+        }
+
 
         CreateEnemy();
 

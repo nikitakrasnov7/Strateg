@@ -5,7 +5,6 @@ using UnityEngine;
 public class RayController : MonoBehaviour
 {
     private UnitController unitController;
-    public UnitActionsControllerSO _unitActionsControllerSO;
     private Unit unit;
 
 
@@ -27,21 +26,16 @@ public class RayController : MonoBehaviour
                     if (hit.collider.tag == "Unit")
                     {
                         GameObject unitPref = hit.collider.gameObject;
-                        unitController = unitPref.GetComponent<UnitController>();
-                        unit = unitController.unit;
+                        unit = unitPref.GetComponent<UnitController>().unit;
 
-                        _unitActionsControllerSO.Unit = hit.collider.gameObject;
+                        UnitActionsControllerSO.Instance.Unit = hit.collider.gameObject;
 
                         UIController.Instance.InformationPanelClose(true);
                         UIController.Instance.InformationPanel(unitPref);
 
                         UiActive(unit);
 
-                        
-
                         DownInventoryManager.Instance.ActiveTrue();
-
-                        
 
                     }
                     else
@@ -52,9 +46,7 @@ public class RayController : MonoBehaviour
                     }
 
                     UnitActionsControllerSO.Instance.RayHitObject = hit.collider.gameObject;
-                }
-
-
+                }                
             }
         }
     }

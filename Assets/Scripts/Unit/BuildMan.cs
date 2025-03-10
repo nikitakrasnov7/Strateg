@@ -1,6 +1,6 @@
 
 using System.Collections;
-using Unity.VisualScripting;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -12,8 +12,6 @@ public class BuildMan : UnitController
 
     NavMeshAgent agent;
 
-    Animator animator;
-    Animator resourceAnim;
 
     GameObject Build;
     GameObject Resources;
@@ -23,12 +21,20 @@ public class BuildMan : UnitController
 
     public bool isUsingUnit = false;
 
+    //============================= 
+    Animator animator;
+    Animator resourceAnim;
+    AnimatorStateInfo resourceAnimState;
+
+    public ListBuildForResources listBuild;
 
 
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+
+        listBuild.BuildPosition.Clear();
     }
 
     private void Update()
@@ -36,7 +42,8 @@ public class BuildMan : UnitController
         if (isBuild)
         {
             Building();
-            RotationUnit(Build);
+
+            RotationUnit();
         }
 
         if (isExtractionResources)
@@ -50,9 +57,8 @@ public class BuildMan : UnitController
 
                 if (Physics.Raycast(ray, out hit))
                 {
-                    if (hit.collider.tag == "Tree" || hit.collider.tag  == "Rock")
+                    if (hit.collider.tag == "Tree" || hit.collider.tag == "Rock")
                     {
-                        Debug.Log("derevooooo");
                         gameObject.GetComponent<Animator>().SetBool("Going", true);
                         Resources = hit.collider.gameObject;
                         ExtractionResources();
@@ -63,28 +69,85 @@ public class BuildMan : UnitController
 
         }
 
+        if (resourceAnim != null)
+        {
+            SetAnimAndGoindToBase();
+        }
     }
-    
-    public void RotationUnit(GameObject obj)
-    {
-        Vector3 direction = agent.destination - obj.transform.position;
-        direction.y = 0f;
 
-        Quaternion rotation = Quaternion.LookRotation(direction);
-        agent.gameObject.transform.rotation = rotation;
+    public void SetAnimAndGoindToBase()
+    {
+        resourceAnimState = resourceAnim.GetCurrentAnimatorStateInfo(0);
+        GameObject build;
+        
+        //List<GameObject> builds = listBuild.BuildPosition;
+
+        if(resourceAnimState.IsName("Finish"))
+        {
+            animator.SetBool("Going", true);
+
+            foreach(GameObject go in listBuild.BuildPosition)
+            {
+                if(go.tag == "Storage")
+                {
+                    ActivationBuilding(go);
+                }
+            }
+            animator.SetBool("Building", false);
+            animator.SetTrigger("EndUnit");
+
+
+
+            resourceAnim = null;
+
+        }
+    }
+
+    public void RotationUnit()
+    {
+        Vector3 velocity = agent.velocity;
+        if (velocity.sqrMagnitude < 0.1f) return; // ≈сли агент почти не двигаетс€, игнорируем
+
+        Vector3 forward = transform.forward;
+        Vector3 right = transform.right;
+
+        float dotForward = Vector3.Dot(forward, velocity.normalized);
+        float dotRight = Vector3.Dot(right, velocity.normalized);
+
+        if (dotForward > 0.7f)
+        {
+            agent.gameObject.transform.rotation = Quaternion.LookRotation(new Vector3(dotRight, 0, dotForward));
+                
+        }
+        else if (dotForward < -0.7f)
+        {
+            agent.gameObject.transform.rotation = Quaternion.LookRotation(new Vector3(dotRight, 0, dotForward));
+
+        }
+        else if (dotRight > 0)
+        {
+            agent.gameObject.transform.rotation = Quaternion.LookRotation(new Vector3(dotRight, 0, dotForward));
+        }
+        else
+        {
+            agent.gameObject.transform.rotation = Quaternion.LookRotation(new Vector3(dotRight, 0, dotForward));
+        }
     }
 
     public void Building()
     {
         agent.isStopped = false;
         agent.destination = Build.transform.position;
+        
+        //agent.SetDestination(Build.transform.position);
     }
 
     public void ExtractionResources()
     {
         agent.isStopped = false;
+        RotationUnit();
         agent.destination = Resources.transform.position;
-        RotationUnit(Resources);
+
     }
 
 
@@ -133,7 +196,7 @@ public class BuildMan : UnitController
                 resourceAnim = collision.gameObject.GetComponent<Animator>();
 
                 StartCoroutine(TimeForExtraction());
-                
+
 
 
 
@@ -154,13 +217,13 @@ public class BuildMan : UnitController
         animator.SetBool("Going", false);
         animator.SetBool("Building", false);
 
+        Resources.GetComponent<BoxCollider>().enabled = false;
         resourceAnim.SetTrigger("Start");
 
         yield return new WaitForSeconds(5);
         Destroy(Resources.gameObject);
-        StopCoroutine(TimeForExtraction());
-        
-        
+
+
 
 
     }

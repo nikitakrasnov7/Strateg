@@ -664,6 +664,7 @@ MonoBehaviour:
   isBuild: 0
   isExtractionResources: 0
   isUsingUnit: 0
+  listBuild: {fileID: 11400000, guid: 5371bf1670e0c584faef4013169d4474, type: 2}
 --- !u!195 &3934512814416964254
 NavMeshAgent:
   m_ObjectHideFlags: 0

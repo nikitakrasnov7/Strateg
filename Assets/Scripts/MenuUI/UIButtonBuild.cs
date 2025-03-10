@@ -46,7 +46,11 @@ public class UIButtonBuild : MonoBehaviour
                     }
                     else if (touch.phase == TouchPhase.Moved)
                     {
-                        UnitActionsControllerSO.Instance.PrefabBuild.gameObject.transform.position = new Vector3(hit.point.x, 0, hit.point.z);
+                        if (UnitActionsControllerSO.Instance.PrefabBuild != null)
+                        {
+
+                            UnitActionsControllerSO.Instance.PrefabBuild.gameObject.transform.position = new Vector3(hit.point.x, 0, hit.point.z);
+                        }
                     }
                     if (touch.phase == TouchPhase.Ended)
                     {
@@ -57,7 +61,7 @@ public class UIButtonBuild : MonoBehaviour
             }
 
         }
-        
+
     }
     public void BuildConstruct()
     {

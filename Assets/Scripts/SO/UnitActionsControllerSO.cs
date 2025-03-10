@@ -23,6 +23,7 @@ public class UnitActionsControllerSO : MonoBehaviour
     NavMeshAgent agent;
 
 
+    public ListBuildForResources listBuild;
     // Build collider
     //=========================================
     private Image _panelCreate;
@@ -81,7 +82,7 @@ public class UnitActionsControllerSO : MonoBehaviour
 
     GameObject rayHitObject;
 
-    public GameObject RayHitObject { get { return rayHitObject; }set { rayHitObject = value; } }
+    public GameObject RayHitObject { get { return rayHitObject; } set { rayHitObject = value; } }
 
 
     private static UnitActionsControllerSO instance;
@@ -148,6 +149,8 @@ public class UnitActionsControllerSO : MonoBehaviour
         PanelCreate.gameObject.SetActive(false);
         Destroy(canva.gameObject);
 
+        AddBuildPosition(PrefabBuild);
+
     }
 
     public void DestroyBuild()
@@ -184,11 +187,19 @@ public class UnitActionsControllerSO : MonoBehaviour
 
     public void ActiveCostResources(bool toggle)
     {
-        UnitsCost.gameObject.SetActive(toggle);
-        FoodCost.gameObject.SetActive(toggle);
-        TreeCost.gameObject.SetActive(toggle);
-        IronCost.gameObject.SetActive(toggle);
-        RockCost.gameObject.SetActive(toggle);
+        if (UnitsCost != null &&
+            FoodCost != null &&
+            TreeCost != null &&
+            IronCost != null &&
+            RockCost != null)
+        {
+
+            UnitsCost.gameObject.SetActive(toggle);
+            FoodCost.gameObject.SetActive(toggle);
+            TreeCost.gameObject.SetActive(toggle);
+            IronCost.gameObject.SetActive(toggle);
+            RockCost.gameObject.SetActive(toggle);
+        }
 
     }
 
@@ -234,7 +245,6 @@ public class UnitActionsControllerSO : MonoBehaviour
 
         if (BuildAnim)
         {
-            Debug.Log("");
             unit.GetComponent<FinishBuilding>().buildingAnimator = BuildAnim;
         }
 
@@ -245,5 +255,10 @@ public class UnitActionsControllerSO : MonoBehaviour
     {
         ActivationUnits activation;
         activation = unit.GetComponent<ActivationUnits>();
+    }
+
+    public void AddBuildPosition(GameObject build)
+    {
+        listBuild.BuildPosition.Add(build);
     }
 }

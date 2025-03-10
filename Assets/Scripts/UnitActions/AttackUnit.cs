@@ -4,8 +4,17 @@ using UnityEngine;
 
 public class AttackUnit : MonoBehaviour
 {
-    public void Attack(GameObject unit, Vector3 position)
+    GameObject unit;
+    public void Attack()
     {
-        unit.transform.position = position;
+        if(UnitActionsControllerSO.Instance.Unit != null)
+        {
+            unit = UnitActionsControllerSO.Instance.Unit;
+
+            FIghters fIghters = unit.GetComponent<FIghters>();
+            fIghters.isAttack = true;
+
+
+        }
     }
 }

@@ -185,6 +185,7 @@ MonoBehaviour:
   unit: {fileID: 0}
   prefabBuild: {fileID: 0}
   isMove: 1
+  listBuild: {fileID: 11400000, guid: 5371bf1670e0c584faef4013169d4474, type: 2}
   isBuilding: 0
   ResourceCount: {fileID: 11400000, guid: 90b6331ec9a5a1846bbf6882dc75d98f, type: 2}
   AnimUnit: {fileID: 0}
@@ -609,6 +610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unit: 0
+  Icon: {fileID: 0}
   Name: 
   hp: 0
   speed: 0

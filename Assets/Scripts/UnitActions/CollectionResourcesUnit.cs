@@ -6,16 +6,15 @@ using UnityEngine;
 public class CollectionResourcesUnit : MonoBehaviour
 {
     GameObject Unit;
-    Animator animator;
 
     void UnitToResources()
     {
         if (UnitActionsControllerSO.Instance.Unit != null)
         {
-            UnitActionsControllerSO.Instance.isExtraction = true;
-
             Unit = UnitActionsControllerSO.Instance.Unit;
-            animator = Unit.GetComponent<Animator>();
+
+            //UnitActionsControllerSO.Instance.isExtraction = true;
+
             BuildMan buildMan = Unit.GetComponent<BuildMan>();
 
             buildMan.isExtractionResources = true;
