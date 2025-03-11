@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8249393832202317037}
   - component: {fileID: 8580769676498708132}
   - component: {fileID: 3238859478427077768}
+  - component: {fileID: 8771969572610558451}
   m_Layer: 0
   m_Name: Archer
   m_TagString: Unit
@@ -131,10 +132,11 @@ MonoBehaviour:
   speed: 0
   resource: 
   zonaActive: 0
-  MinDistationForAttack: 0
+  MinDistationForAttack: 20
   MaxDistationForAttack: 0
   TimeDelayAttack: 0
   Damage: 0
+  isAttack: 0
 --- !u!195 &8580769676498708132
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -169,6 +171,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fc87126485083d4f8f913f8fc983c7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8771969572610558451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861785189790964152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2089776a9d0b9f4f8bb7ba3fd639f22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAttack: 0
+  isCorunine: 1
+  SpawnPointer: {fileID: 8414071560282641515}
+  SwordPrefab: {fileID: 491188105184540313, guid: 7a53505d04bc1c1478de2c099b38beea, type: 3}
 --- !u!1 &2638773636268526677
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,7 +334,8 @@ Transform:
   m_LocalPosition: {x: 1.5800018, y: 0.8990431, z: -0.070007324}
   m_LocalScale: {x: 0.0391497, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8414071560282641515}
   m_Father: {fileID: 2503440053198489479}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -88.83}
 --- !u!33 &5323195901791353467
@@ -370,6 +389,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &5074555731718573445
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8414071560282641515}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8414071560282641515
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5074555731718573445}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.017389951, y: 0.70704335, z: 0.7069532, w: 0.0021155772}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 25.613573, y: 1.3164316, z: 1.3167746}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5964527257443975260}
+  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!1 &6933021507952392752
 GameObject:
   m_ObjectHideFlags: 0

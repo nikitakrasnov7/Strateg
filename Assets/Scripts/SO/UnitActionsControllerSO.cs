@@ -80,6 +80,7 @@ public class UnitActionsControllerSO : MonoBehaviour
     public bool isExtraction;
 
 
+
     GameObject rayHitObject;
 
     public GameObject RayHitObject { get { return rayHitObject; } set { rayHitObject = value; } }

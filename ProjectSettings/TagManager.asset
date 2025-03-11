@@ -10,6 +10,7 @@ TagManager:
   - Rock
   - Build
   - Storage
+  - Zombi
   layers:
   - Default
   - TransparentFX

@@ -43,7 +43,6 @@ public class BuildMan : UnitController
         {
             Building();
 
-            RotationUnit();
         }
 
         if (isExtractionResources)

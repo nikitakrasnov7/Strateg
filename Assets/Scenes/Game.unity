@@ -190,6 +190,7 @@ MonoBehaviour:
   ResourceCount: {fileID: 11400000, guid: 90b6331ec9a5a1846bbf6882dc75d98f, type: 2}
   AnimUnit: {fileID: 0}
   isExtraction: 0
+  Sward: 0
 --- !u!4 &261157700
 Transform:
   m_ObjectHideFlags: 0
@@ -861,7 +862,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f8cacb63e5a5b42a6c99e4bf79fbb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _unitActionsControllerSO: {fileID: 261157699}
 --- !u!1 &1546490591
 GameObject:
   m_ObjectHideFlags: 0
