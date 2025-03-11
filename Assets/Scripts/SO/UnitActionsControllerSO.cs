@@ -170,9 +170,21 @@ public class UnitActionsControllerSO : MonoBehaviour
         IronCost.text = "-" + costIron.ToString();
         RockCost.text = "-" + costRock.ToString();
     }
+
+    public bool IfNull()
+    {
+        if (UnitsCost.text != null &&
+        FoodCost.text != null &&
+        TreeCost.text != null &&
+        IronCost.text != null &&
+        RockCost.text!= null)
+        {
+            return true;
+        }
+        return false;
+    }
     public void UpdateCountResorces(int countUnit, int countFood, int countTree, int countIron, int countRock)
     {
-
         ResourceCount.Units -= countUnit;
         ResourceCount.Food -= countFood;
         ResourceCount.Tree -= countTree;

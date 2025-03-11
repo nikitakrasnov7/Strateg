@@ -57,8 +57,8 @@ public class GenerationMap : MonoBehaviour
 
 
 
-        GenerationResouces();
         GenerationEnemy();
+        GenerationResouces();
 
     }
 
@@ -80,7 +80,7 @@ public class GenerationMap : MonoBehaviour
         _listVector.Add(new Vector3((_terrainSize / 6) * 5, 0, _terrainSize / 2));
         _listVector.Add(new Vector3((_terrainSize / 6) * 5, 0, _terrainSize * 5 / 6));
 
-        if (PrefabPlayer != null)
+        if (PrefabPlayer != null || PointPlayer != null)
         {
             GameObject Player = Instantiate(PrefabPlayer, PointPlayer.transform.position, Quaternion.identity);
 

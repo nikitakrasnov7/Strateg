@@ -12,8 +12,11 @@ public class CostResources : MonoBehaviour
 
     private void OnEnable()
     {
-        UnitActionsControllerSO.Instance.ActiveCostResources(true);
-        UnitActionsControllerSO.Instance.UpdateCostResorces(UnitCost, FoodCost, TreeCost, IronCost, RockCost);
+
+            UnitActionsControllerSO.Instance.ActiveCostResources(true);
+            UnitActionsControllerSO.Instance.UpdateCostResorces(UnitCost, FoodCost, TreeCost, IronCost, RockCost);
+       
+
     }
 
     private void OnDestroy()
