@@ -32,7 +32,7 @@ public class BuildMan : UnitController
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
 
         listBuild.BuildPosition.Clear();
     }
@@ -58,7 +58,7 @@ public class BuildMan : UnitController
                 {
                     if (hit.collider.tag == "Tree" || hit.collider.tag == "Rock")
                     {
-                        gameObject.GetComponent<Animator>().SetBool("Going", true);
+                        gameObject.GetComponentInChildren<Animator>().SetBool("Going", true);
                         Resources = hit.collider.gameObject;
                         ExtractionResources();
                     }
@@ -177,7 +177,7 @@ public class BuildMan : UnitController
                 animator.SetBool("Building", true);
 
 
-                UnitActionsControllerSO.Instance.AnimUnit = gameObject.GetComponent<Animator>();
+                UnitActionsControllerSO.Instance.AnimUnit = gameObject.GetComponentInChildren<Animator>();
                 UnitActionsControllerSO.Instance.StartAnimator(gameObject, "StartBuilding", Build);
 
                 Build = null;
@@ -212,9 +212,10 @@ public class BuildMan : UnitController
 
         yield return new WaitForSeconds(2);
 
-        animator.SetTrigger("EndUnit");
         animator.SetBool("Going", false);
         animator.SetBool("Building", false);
+
+        animator.SetTrigger("EndUnit");
 
         Resources.GetComponent<BoxCollider>().enabled = false;
         resourceAnim.SetTrigger("Start");

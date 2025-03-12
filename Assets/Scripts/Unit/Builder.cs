@@ -6,4 +6,10 @@ public class Builder : MonoBehaviour
 {
     public float Endurance;
     public float Price;
+
+    public bool isReady;
+
+
+
+
 }

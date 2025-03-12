@@ -20,8 +20,8 @@ public class RepairUnit : MonoBehaviour
         }
         else
         {
-            UnitActionsControllerSO.Instance.IsBuilding = false;
-            Build.gameObject.SetActive(false);
+            //UnitActionsControllerSO.Instance.IsBuilding = false;
+            //Build.gameObject.SetActive(false);
         }
     }
 

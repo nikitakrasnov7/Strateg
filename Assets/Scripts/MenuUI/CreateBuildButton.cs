@@ -25,7 +25,7 @@ public class CreateBuildButton : MonoBehaviour
 
 
             unit = UnitActionsControllerSO.Instance.Unit.gameObject;
-            animatorUnit = unit.GetComponent<Animator>();
+            animatorUnit = unit.GetComponentInChildren<Animator>();
 
 
             if (costResources.UnitCost <= ResourceCount.Units &&

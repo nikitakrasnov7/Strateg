@@ -8,10 +8,10 @@ public class FinishBuilding : MonoBehaviour
     private AnimatorStateInfo animState;
     private void Awake()
     {
-        unitAnimator = GetComponent<Animator>();
+        unitAnimator = GetComponentInChildren<Animator>();
     }
 
-    private void Update()   
+    private void Update()
     {
         if (buildingAnimator != null)
         {
@@ -26,8 +26,16 @@ public class FinishBuilding : MonoBehaviour
             unitAnimator.SetBool("Going", false);
             unitAnimator.SetBool("Building", false);
             unitAnimator.SetTrigger("EndUnit");
+
+            if (buildingAnimator.gameObject.GetComponent<Builder>() != null)
+            {
+                buildingAnimator.gameObject.GetComponent<Builder>().isReady = true;
+                    
+            }
+
+
             buildingAnimator = null;
         }
-        
+
     }
 }

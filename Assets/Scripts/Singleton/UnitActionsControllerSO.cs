@@ -232,8 +232,10 @@ public class UnitActionsControllerSO : MonoBehaviour
                 if (hit.collider.name == "Terrain")
                 {
                     var test = hit.point;
+
                     var build = Instantiate(PrefabForGame);
                     PrefabBuild = build.gameObject;
+
                     build.AddComponent<ColliderFunctions>();
 
                     build.transform.position = test;

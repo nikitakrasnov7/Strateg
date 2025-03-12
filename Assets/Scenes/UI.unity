@@ -13733,7 +13733,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Build: 1
   Prefab: {fileID: 3931184038110116919, guid: f78cde2f497c5ba41908c04b439ffb39, type: 3}
-  ConsentPanel: {fileID: 0}
+  ConsentPanel: {fileID: 645888752}
   isActive: 0
 --- !u!114 &2029009672
 MonoBehaviour:
