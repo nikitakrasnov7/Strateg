@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 7969229415995839217}
   - component: {fileID: 4380392710458425281}
   - component: {fileID: 8499294601140772216}
-  - component: {fileID: 7474291457779735647}
+  - component: {fileID: 3234566128677956172}
   m_Layer: 10
   m_Name: house_model
   m_TagString: Storage
@@ -230,7 +230,7 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 1.29, z: 0}
   m_TimeToStationary: 0.5
---- !u!114 &7474291457779735647
+--- !u!114 &3234566128677956172
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -239,11 +239,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3931184038110116919}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfc209ece3cadc24fa63e13579e20ad4, type: 3}
+  m_Script: {fileID: 11500000, guid: 332de1b4241e2ee4e8b8b50f0200f514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InformationUnit: {fileID: 11400000, guid: 60624ac68e897034ebbeec0840e7e127, type: 2}
   Endurance: 0
   Price: 0
+  isReady: 0
   TypeBuild: 1
 --- !u!1 &4966059860270376446
 GameObject:

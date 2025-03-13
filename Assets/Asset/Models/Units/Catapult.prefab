@@ -5482,6 +5482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c577ef72aa7f5a4479db67f10b5f43e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InformationUnit: {fileID: 11400000, guid: d04175cf8dc623b46b95487e988c6210, type: 2}
   unit: 0
   Icon: {fileID: 0}
   Name: 

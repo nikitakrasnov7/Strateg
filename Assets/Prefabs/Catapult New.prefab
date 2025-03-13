@@ -5308,6 +5308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c577ef72aa7f5a4479db67f10b5f43e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InformationUnit: {fileID: 11400000, guid: d04175cf8dc623b46b95487e988c6210, type: 2}
   unit: 0
   Icon: {fileID: 21300000, guid: 2e0c6035e4870b84d804a645cb3fe48f, type: 3}
   Name: 
@@ -5403,6 +5404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd0a2dd4f2282624097a5b63b3b8b431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InformationUnit: {fileID: 0}
   unit: 0
   Icon: {fileID: 21300000, guid: 18b3e586b942b6548bb07ff2451b8535, type: 3}
   Name: 

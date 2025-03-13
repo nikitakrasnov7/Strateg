@@ -13,17 +13,12 @@ public class UIButtonBuild : MonoBehaviour
 
     public Image ConsentPanel;
 
-    [SerializeField] private bool isActive = true;
+    //[SerializeField] private bool isActive = true;
 
     public UnityAction<GameObject> OnButtonClicked;
 
 
 
-    private void Update()
-    {
-        
-
-    }
     
     
     public void BuildConstruct()

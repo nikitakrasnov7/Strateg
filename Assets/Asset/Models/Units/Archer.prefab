@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd0a2dd4f2282624097a5b63b3b8b431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InformationUnit: {fileID: 11400000, guid: e57547f30e3deb340a6cd2da84e5409e, type: 2}
   unit: 0
   Icon: {fileID: 21300000, guid: 18b3e586b942b6548bb07ff2451b8535, type: 3}
   Name: 

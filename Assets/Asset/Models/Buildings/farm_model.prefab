@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 3288137043439588340}
   - component: {fileID: -5465817836477230598}
   - component: {fileID: 5248909750098051505}
+  - component: {fileID: -1270253621709207338}
   m_Layer: 0
   m_Name: farm_model
   m_TagString: Build
@@ -245,6 +246,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-1270253621709207338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705587607915861198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332de1b4241e2ee4e8b8b50f0200f514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InformationUnit: {fileID: 11400000, guid: 8763b6aa38790f14fbc9ec2fb8855ca2, type: 2}
+  Endurance: 0
+  Price: 0
+  isReady: 0
+  TypeBuild: 4
 --- !u!1 &2065426160451974739
 GameObject:
   m_ObjectHideFlags: 0

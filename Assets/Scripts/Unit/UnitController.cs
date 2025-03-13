@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class UnitController : MonoBehaviour
 {
+    public InformationUnitSO InformationUnit;
     public Unit unit;
 
     public Sprite Icon;

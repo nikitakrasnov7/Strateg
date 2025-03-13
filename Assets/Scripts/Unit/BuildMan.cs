@@ -77,7 +77,7 @@ public class BuildMan : UnitController
     public void SetAnimAndGoindToBase()
     {
         resourceAnimState = resourceAnim.GetCurrentAnimatorStateInfo(0);
-        GameObject build;
+        //GameObject build;
         
         //List<GameObject> builds = listBuild.BuildPosition;
 
