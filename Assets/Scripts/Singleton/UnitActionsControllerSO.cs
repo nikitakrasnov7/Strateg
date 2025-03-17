@@ -88,6 +88,8 @@ public class UnitActionsControllerSO : MonoBehaviour
 
     public GameObject PrefabWorkoutBuild;
 
+    public GameObject PlayerBase;
+
 
     private static UnitActionsControllerSO instance;
 

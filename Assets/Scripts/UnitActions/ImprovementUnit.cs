@@ -13,12 +13,11 @@ public class ImprovementUnit : MonoBehaviour
     List<float> posX = new List<float>() { 7, 6, 5, 4, 3, -3, -4, -5, -6, -7 };
     List<float> posZ = new List<float>() { 7, 6, 5, 4, 3, -3, -4, -5, -6, -7 };
 
-    float timer;
-
 
 
     public void Improvement()
     {
+        unitsList.Clear();
         parentUnitImp = UnitActionsControllerSO.Instance.PrefabWorkoutBuild;
 
         int countUnit = UIController.Instance.Workout.transform.childCount;
@@ -33,22 +32,26 @@ public class ImprovementUnit : MonoBehaviour
             GameObject prefUnit = unitSlot.GetComponentInChildren<WorkoutInformationUnit>().PrefabUnitForWorkout;
 
 
-            for (int j = 0; j < count; j++)
-            {
-                
-                StartCoroutine(TestWork(prefUnit));
 
 
-            }
+            StartCoroutine(TestWork(count, prefUnit));
+
+
 
         }
     }
 
-    IEnumerator TestWork(GameObject prefUnit)
-    {
 
-        yield return new WaitForSeconds(5);
-        UnitActionsControllerSO.Instance.InstantiateNewUnitsWorkout(prefUnit, parentUnitImp, posX[Random.Range(0, posX.Count)], posZ[Random.Range(0, posZ.Count)]);
+
+
+
+    IEnumerator TestWork(int count, GameObject prefUnit)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            yield return new WaitForSeconds(5);
+            UnitActionsControllerSO.Instance.InstantiateNewUnitsWorkout(prefUnit, parentUnitImp, posX[Random.Range(0, posX.Count)], posZ[Random.Range(0, posZ.Count)]);
+        }
 
     }
 
