@@ -53,7 +53,10 @@ public class UIController : MonoBehaviour
     public TextMeshProUGUI ProgressBarUnit;
     public Slider ProgressSlider;
 
+
     public GameObject ManyUnitsPanel;
+
+    public GameObject PrefabUnitSlotForWorkout;
 
 
     List<GameObject> units = new List<GameObject>();
@@ -161,7 +164,7 @@ public class UIController : MonoBehaviour
         units.Clear();
     }
 
-   
+
 
     public void AddedUnitElementIcon(GameObject unit)
     {
@@ -179,4 +182,20 @@ public class UIController : MonoBehaviour
         }
     }
 
+
+    public void AddingUnitsForWorkout(List<GameObject> unitsPrefab)
+    {
+        int countChild = Workout.transform.childCount;
+        for (int i = 0; i < countChild; i++)
+        {
+            Destroy(Workout.transform.GetChild(i).gameObject);
+        }
+
+        for (int i = 0; i < unitsPrefab.Count; i++)
+        {
+            GameObject slot = Instantiate(unitsPrefab[i]);
+            slot.transform.parent = Workout.transform;
+
+        }
+    }
 }

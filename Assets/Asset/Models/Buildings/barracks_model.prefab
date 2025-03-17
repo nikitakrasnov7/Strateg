@@ -412,6 +412,8 @@ GameObject:
   - component: {fileID: 633857465280432356}
   - component: {fileID: 725190812743226650}
   - component: {fileID: 913808566764030666}
+  - component: {fileID: 6011061587111009546}
+  - component: {fileID: 695316241428943098}
   m_Layer: 0
   m_Name: barracks_model
   m_TagString: Build
@@ -429,7 +431,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.38999933}
-  m_LocalScale: {x: 0.44, y: 0.44, z: 0.44}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5512777855719146201}
@@ -517,6 +519,48 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6011061587111009546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131050632274006739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332de1b4241e2ee4e8b8b50f0200f514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InformationUnit: {fileID: 11400000, guid: 60624ac68e897034ebbeec0840e7e127, type: 2}
+  Endurance: 0
+  Price: 0
+  isReady: 0
+  TypeBuild: 0
+  unitsPrefworkout:
+  - {fileID: 5866734461512105084, guid: bdf58fc3a8cfde348a4564227bdabd07, type: 3}
+  - {fileID: 5866734461512105084, guid: 35d4876a591c7e14998515cc8cadaa77, type: 3}
+  - {fileID: 5866734461512105084, guid: b7b55d7d93789784a913d8559d62c434, type: 3}
+--- !u!65 &695316241428943098
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131050632274006739}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 43.64, y: 11.63, z: 56.68}
+  m_Center: {x: 0, y: 5.13, z: 0}
 --- !u!1 &1200124859606866032
 GameObject:
   m_ObjectHideFlags: 0

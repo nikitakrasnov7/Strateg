@@ -41,7 +41,7 @@ public class BuildTransormController : MonoBehaviour
                         if (touch.phase == TouchPhase.Moved)
                         {
                             UnitActionsControllerSO.Instance.PrefabBuild.gameObject.transform.position = new Vector3(hit.point.x, 0, hit.point.z);
-                            Debug.Log(UnitActionsControllerSO.Instance.PrefabBuild.transform.position);
+                            //Debug.Log(UnitActionsControllerSO.Instance.PrefabBuild.transform.position);
                         }
 
                     }

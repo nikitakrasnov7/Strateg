@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using System.Collections;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
@@ -84,6 +85,8 @@ public class UnitActionsControllerSO : MonoBehaviour
     GameObject rayHitObject;
 
     public GameObject RayHitObject { get { return rayHitObject; } set { rayHitObject = value; } }
+
+    public GameObject PrefabWorkoutBuild;
 
 
     private static UnitActionsControllerSO instance;
@@ -177,7 +180,7 @@ public class UnitActionsControllerSO : MonoBehaviour
         FoodCost.text != null &&
         TreeCost.text != null &&
         IronCost.text != null &&
-        RockCost.text!= null)
+        RockCost.text != null)
         {
             return true;
         }
@@ -276,4 +279,34 @@ public class UnitActionsControllerSO : MonoBehaviour
     {
         listBuild.BuildPosition.Add(build);
     }
+
+    public void InstantiateNewUnitsWorkout(GameObject prefabUnits, GameObject positionForParentBuild, float x, float z)
+    {
+        GameObject unit = Instantiate(prefabUnits);
+
+
+        unit.transform.position = positionForParentBuild.transform.position;
+        unit.transform.parent = positionForParentBuild.transform;
+
+        if (unit.transform.position == positionForParentBuild.transform.position)
+        {
+            while (true)
+            {
+                float posX = Random.Range(-10f, 10f);
+                float posZ = Random.Range(-10f, 10f);
+                if (!((posX >= -2 && posX <= 2) && (posZ >= -2 && posZ <= 2)))
+                {
+                    unit.transform.position = new Vector3(positionForParentBuild.transform.position.x + posX,
+                        0,
+                        positionForParentBuild.transform.position.z + posZ
+                        );
+                    break;
+                }
+            }
+        }
+
+
+    }
+
+   
 }

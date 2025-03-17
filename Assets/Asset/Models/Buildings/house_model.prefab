@@ -247,6 +247,8 @@ MonoBehaviour:
   Price: 0
   isReady: 0
   TypeBuild: 1
+  unitsPrefworkout:
+  - {fileID: 5866734461512105084, guid: bbbe4cb913afe3544a34345401ba61eb, type: 3}
 --- !u!1 &4966059860270376446
 GameObject:
   m_ObjectHideFlags: 0

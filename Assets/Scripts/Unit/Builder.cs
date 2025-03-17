@@ -1,6 +1,7 @@
-using System.Collections;
+
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Builder : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class Builder : MonoBehaviour
 
     public Building TypeBuild;
 
+    public List<GameObject> unitsPrefworkout;
+
     private void Update()
     {
         if (UnitActionsControllerSO.Instance.RayHitObject != null)
@@ -22,8 +25,16 @@ public class Builder : MonoBehaviour
             {
                 if (UnitActionsControllerSO.Instance.RayHitObject.gameObject.name == gameObject.name)
                 {
-                    Debug.Log("выбран построенный объект");
+
+                    Debug.Log("Click");
+
+                    UIController.Instance.AddingUnitsForWorkout(unitsPrefworkout);
+
                     UIController.Instance.UiActive(false, false, false, true, false, true);
+
+                    UnitActionsControllerSO.Instance.PrefabWorkoutBuild = UnitActionsControllerSO.Instance.RayHitObject;
+
+                    UnitActionsControllerSO.Instance.RayHitObject = null;
                 }
                 //UIController.Instance.UiActive(false, false, false, false, false, false);
             }
@@ -31,5 +42,6 @@ public class Builder : MonoBehaviour
         }
     }
 
+   
 
 }

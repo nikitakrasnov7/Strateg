@@ -38,7 +38,7 @@ public class RayController : MonoBehaviour
 
                         UnitActionsControllerSO.Instance.Unit = hit.collider.gameObject;
 
-                        UnitActionsControllerSO.Instance.RayHitObject = hit.collider.gameObject;
+                        //UnitActionsControllerSO.Instance.RayHitObject = hit.collider.gameObject;
 
                         if (isChosen)
                         {
