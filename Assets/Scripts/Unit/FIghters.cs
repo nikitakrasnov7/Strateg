@@ -30,13 +30,16 @@ public class FIghters : UnitController
                     if (distation >= MinDistationForAttack)
                     {
                         agent.destination = unit.transform.position;
+                        
                     }
                     else
                     {
-                        agent.isStopped = true;
+
+
                         //Debug.Log("враг рядом = стрелять");
                         gameObject.GetComponent<SwordAttack>().isAttack = true;
 
+                        agent.isStopped = true;
 
                         isAttack = false;
                     }

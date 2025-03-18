@@ -83,7 +83,7 @@ public class GenerationMap : MonoBehaviour
         if (PrefabPlayer != null || PointPlayer != null)
         {
             GameObject Player = Instantiate(PrefabPlayer, PointPlayer.transform.position, Quaternion.identity);
-            UnitActionsControllerSO.Instance.PlayerBase = Player;
+            //UnitActionsControllerSO.Instance.PlayerBase = Player;
 
             CameraController.transform.position = new Vector3(Player.transform.position.x - 40, 0, Player.transform.position.z);
         }
