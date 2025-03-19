@@ -16,9 +16,12 @@ public class SwordController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.gameObject.tag == "Zombi")
+        if (other.gameObject.tag == "Zombi" || other.gameObject.tag == "ZombiGo")
         {
             gameObject.transform.parent.GetComponentInParent<SwordAttack>().isAttack = true;
+
+            other.GetComponent<Enemy>().DamageEnemy(25);
+
             Destroy(gameObject);
         }
         

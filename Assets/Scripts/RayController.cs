@@ -11,6 +11,8 @@ public class RayController : MonoBehaviour
     bool isStartTimer;
     bool isChosen = false;
 
+    public LayerMask layer;
+
     // Update is called once per frame
     void Update()
     {
@@ -26,7 +28,7 @@ public class RayController : MonoBehaviour
 
 
 
-                if (Physics.Raycast(ray, out hit))
+                if (Physics.Raycast(ray, out hit, 100,layer))
                 {
 
                     if (hit.collider.tag == "Unit")

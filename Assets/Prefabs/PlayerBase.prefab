@@ -126,7 +126,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 35.75, y: 37.45, z: 17.57}
+  m_Extents: {x: 20.85, y: 37.45, z: 16.345}
   m_MoveThreshold: 0.1
   m_Carve: 0
   m_CarveOnlyStationary: 1
@@ -336,7 +336,7 @@ NavMeshObstacle:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 193716824449954750}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Shape: 1
   m_Extents: {x: 4.025, y: 6.67, z: 5.925}
@@ -4373,9 +4373,10 @@ GameObject:
   - component: {fileID: 4994657617137608219}
   - component: {fileID: 7206405937391247267}
   - component: {fileID: 4585020659715046968}
+  - component: {fileID: 1948075523341380460}
   m_Layer: 0
   m_Name: Zombi Go
-  m_TagString: Untagged
+  m_TagString: ZombiGo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4472,6 +4473,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1948075523341380460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4607739367272845362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b305a798f05dfa4ea1a016b5940c5ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4674521032324088570
 GameObject:
   m_ObjectHideFlags: 0

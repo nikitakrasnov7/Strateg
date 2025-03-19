@@ -30,25 +30,15 @@ public class EnemyMovementController : MonoBehaviour
             float posZ = pointMovementZ[Random.Range(0, pointMovementZ.Count)];
 
             position = new Vector3(gameObject.transform.position.x + posX, 0, gameObject.transform.position.z + posZ);
-            Debug.Log(dis);
             if (agent != null)
             {
 
                 agent.destination = position;
 
             }
-            //if(agent.transform.position == position)
-            //{
-            //    animator.SetBool("Going", false);
 
-            //}
-            //else if (agent.transform.position != position)
-            //{
-            //    animator.SetBool("Going", true);
 
-            //}
-
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(1f);
 
         }
     }
@@ -56,7 +46,6 @@ public class EnemyMovementController : MonoBehaviour
     private void Update()
     {
         dis = Vector3.Distance(gameObject.transform.position, position);
-        Debug.Log(dis);
         if (dis<=0.024)
         {
             animator.SetBool("Going", false);

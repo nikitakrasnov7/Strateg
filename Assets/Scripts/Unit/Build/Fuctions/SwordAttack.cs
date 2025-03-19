@@ -10,7 +10,6 @@ public class SwordAttack : MonoBehaviour
     public Transform SpawnPointer;
     public GameObject SwordPrefab;
 
-    private bool isNewSword;
     private void Update()
     {
         if (isAttack)

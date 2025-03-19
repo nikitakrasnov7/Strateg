@@ -11,6 +11,7 @@ TagManager:
   - Build
   - Storage
   - Zombi
+  - ZombiGo
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - 
   - MiniMap
   - 
-  - 
+  - Zombi
   - 
   - 
   - 

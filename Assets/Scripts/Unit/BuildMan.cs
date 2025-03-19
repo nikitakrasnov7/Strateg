@@ -221,7 +221,7 @@ public class BuildMan : UnitController
         resourceAnim.SetTrigger("Start");
 
         yield return new WaitForSeconds(5);
-        Destroy(Resources.gameObject);
+        //Destroy(Resources.gameObject);
 
 
 

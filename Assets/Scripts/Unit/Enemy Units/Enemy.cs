@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
+    int hp = 100;
+
     NavMeshAgent agent;
 
     GameObject playerBase;
@@ -19,5 +21,18 @@ public class Enemy : MonoBehaviour
 
         agent.destination = playerBase.transform.position;
 
+    }
+
+    public void DamageEnemy(int damage)
+    {
+        if (hp > 0)
+        {
+            hp -= damage;
+
+            if(hp <= 0)
+            {
+                Destroy(gameObject); 
+            }
+        }
     }
 }

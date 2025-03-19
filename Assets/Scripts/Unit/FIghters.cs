@@ -12,6 +12,9 @@ public class FIghters : UnitController
 
     NavMeshAgent agent;
 
+    private bool isZombi;
+    GameObject zombi;
+
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -30,11 +33,10 @@ public class FIghters : UnitController
                     if (distation >= MinDistationForAttack)
                     {
                         agent.destination = unit.transform.position;
-                        
+
                     }
                     else
                     {
-
 
                         //Debug.Log("враг рядом = стрелять");
                         gameObject.GetComponent<SwordAttack>().isAttack = true;
@@ -43,10 +45,48 @@ public class FIghters : UnitController
 
                         isAttack = false;
                     }
-                    Debug.Log(distation);
                 }
             }
         }
+
+        if (isZombi)
+        {
+            Debug.Log("по идее должен ходить");
+            GameObject unit = zombi;
+
+            float distation = Vector3.Distance(agent.transform.position, unit.transform.position);
+            if (distation >= MinDistationForAttack)
+            {
+                agent.destination = unit.transform.position;
+
+            }
+            else
+            {
+                unit.GetComponent<NavMeshAgent>().isStopped = true;
+
+                gameObject.GetComponent<SwordAttack>().isAttack = true;
+
+                agent.isStopped = true;
+                isZombi = false;
+            }
+        }
+
+
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if (other.tag == "ZombiGo")
+        {
+            isZombi = true;
+            zombi = other.gameObject;
+            agent.isStopped = false;
+
+            //agent.destination = other.transform.position;
+        }
+        Debug.Log(other.tag);
     }
 
 
