@@ -12,6 +12,7 @@ TagManager:
   - Storage
   - Zombi
   - ZombiGo
+  - Serch
   layers:
   - Default
   - TransparentFX

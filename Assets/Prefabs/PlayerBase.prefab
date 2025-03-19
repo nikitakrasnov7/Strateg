@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 6149999119932198740}
   m_Layer: 0
   m_Name: Storage Model
-  m_TagString: Storage
+  m_TagString: Build
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -336,7 +336,7 @@ NavMeshObstacle:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 193716824449954750}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
   m_Extents: {x: 4.025, y: 6.67, z: 5.925}

@@ -20,7 +20,7 @@ public class EnemyUnitController : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(20);
+            yield return new WaitForSeconds(5);
             GameObject enemy = Instantiate(PrefabEnemy);
             enemy.transform.position = ListPointer[Random.Range(0, ListPointer.Count)].transform.position;
             enemy.transform.parent = gameObject.transform;

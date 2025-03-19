@@ -51,7 +51,6 @@ public class FIghters : UnitController
 
         if (isZombi)
         {
-            Debug.Log("по идее должен ходить");
             GameObject unit = zombi;
 
             float distation = Vector3.Distance(agent.transform.position, unit.transform.position);
@@ -84,9 +83,7 @@ public class FIghters : UnitController
             zombi = other.gameObject;
             agent.isStopped = false;
 
-            //agent.destination = other.transform.position;
         }
-        Debug.Log(other.tag);
     }
 
 
