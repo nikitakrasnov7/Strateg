@@ -27,7 +27,7 @@ public class FIghters : UnitController
             if (UnitActionsControllerSO.Instance.RayHitObject != null)
             {
                 GameObject unit = UnitActionsControllerSO.Instance.RayHitObject;
-                if (unit.GetComponent<UnitController>().unit == Unit.Zombie)
+                if (unit.tag == "ZombiGo")
                 {
                     float distation = Vector3.Distance(agent.transform.position, unit.transform.position);
                     if (distation >= MinDistationForAttack)

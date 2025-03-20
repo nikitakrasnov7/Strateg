@@ -122,6 +122,7 @@ public class UIController : MonoBehaviour
         if (unit.GetComponent<UnitController>() != null)
         {
             UnitController unCon = unit.GetComponent<UnitController>();
+
             IconUnit.sprite = unCon.Icon;
             NameUnit.text = unCon.unit.ToString();
             ProgressSlider.value = unCon.hp / 100f;
